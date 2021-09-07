@@ -93,13 +93,13 @@ namespace Recycle.ViewModels
 			
 			//----------------------------------------------------------------------------------------
 			//Api1 : write db for Delta-Robot get what kind of pet bottle now
-			// var conf1 = rand.Next(10, 90);
-			// _robotmongodbServices.Dumpdata(
-			// 	nameof(RobotPickMongoServices.Btype.OTHER),
-			// 	nameof(RobotPickMongoServices.Bkind.PET),
-			// 	conf1,
-			// 	"SinkA",
-			// 	ID);
+			var conf1 = rand.Next(10, 90);
+			_robotmongodbServices.Dumpdata(
+				nameof(RobotPickMongoServices.Btype.OTHER),
+				nameof(RobotPickMongoServices.Bkind.PET),
+				conf1,
+				"SinkA",
+				ID);
 			// Api2 : write db for encounting what kind of error(//RobotArm = 0,VisionSys = 1,ConveySys=2,ControSys=3,) 
 			//  robotLogMongoServices.Dumpdata(
 			//  	"Hi -->: "+rand.Next(10, 40).ToString(),
@@ -176,12 +176,12 @@ namespace Recycle.ViewModels
 			SinkD.SetParameter(
 				acc: SinkD.Accumulation + rand.Next(1, 100),
 				status: randStatus());
-			TimePicks.Add(rand.Next(0, 45));
-			// if (pickTime1 != null)
-			// 	TimePicks.Add((double)pickTime1);
-			// // TimePicks.Add(rand.Next(0, 60));
-			// else
-			// 	TimePicks.Add(0.1);
+			// TimePicks.Add(rand.Next(0, 45));
+			if (pickTime1 != null)
+				TimePicks.Add((double)pickTime1);
+			// TimePicks.Add(rand.Next(0, 60));
+			else
+				TimePicks.Add(0.1);
 			SetEncodeFeedback(rand.Next(1, 100), rand.Next(1, 100));
 		}
 

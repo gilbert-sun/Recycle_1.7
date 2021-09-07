@@ -13,14 +13,14 @@ namespace Recycle.ViewModels
 
 		public DateTime Now { get; private set; }
 		//-------------------------------------------------------------------------------gilbert 2021.08.05
-		public double MaxSecond { get; private set; } = 35;//MainViewModel.ConfigClass.MaxValue_Chart ;//35
+		public double MaxSecond { get; private set; } =  MainViewModel.ConfigClass.MaxValue_Chart ;//35
 
 		public void Add(double value)
 		{
 			var now = DateTime.Now;
 			//-------------------------------------------------------------------------------gilbert 2021.08.05
 			// TODO: 第2頁 下拉選單
-			// MaxSecond = MainViewModel.ConfigClass.MaxValue_Chart;
+			MaxSecond = MainViewModel.ConfigClass.MaxValue_Chart;
 			while (Points.Count > 0 && (now - Points.Peek().Time).TotalSeconds > MaxSecond)
 			{
 				Points.Dequeue();

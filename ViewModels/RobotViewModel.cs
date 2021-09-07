@@ -107,8 +107,30 @@ namespace Recycle.ViewModels
 			//  	nameof(RobotLogMongoServices.LEkind.VisionSys),
 			//  	ID);
 			//
-			// var timetag = ((DateTimeOffset) DateTime.Now).ToUnixTimeMilliseconds();
-			// var MaxSecond = MainViewModel.ConfigClass.MaxValue_Chart;
+			var timetag = ((DateTimeOffset) DateTime.Now).ToUnixTimeMilliseconds();
+			var MaxSecond = MainViewModel.ConfigClass.MaxValue_Chart;
+
+			var timetagNow = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+			switch (MaxSecond)
+			{
+				case 15:
+				case 35:
+					// pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime(1,1,"","");
+					// pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow,1,1,"","");
+					// break;
+				case 1020: 
+					// pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime(2,1,"","");
+					pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow,2,1,"","");
+					break;
+				case 3720: 
+					// pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime(60,1,"","");
+					pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow,60,1,"","");
+					break;
+				case 449280: 
+					// pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime(60,8,"","");
+					pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow,60,8,"","");
+					break;
+			}
 
 			SetArmStatus(randStatus());
 			SetConveyorStatus(randStatus());
@@ -155,7 +177,11 @@ namespace Recycle.ViewModels
 				acc: SinkD.Accumulation + rand.Next(1, 100),
 				status: randStatus());
 			TimePicks.Add(rand.Next(0, 45));
-
+			// if (pickTime1 != null)
+			// 	TimePicks.Add((double)pickTime1);
+			// // TimePicks.Add(rand.Next(0, 60));
+			// else
+			// 	TimePicks.Add(0.1);
 			SetEncodeFeedback(rand.Next(1, 100), rand.Next(1, 100));
 		}
 

@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
+//-----------
+using Recycle.ViewModels;
+//-----------
 namespace Recycle.UserControls
 {
 	public class TimelineChart : Control
@@ -103,7 +105,14 @@ namespace Recycle.UserControls
 
 		public double MaxSecond
 		{
-			get => (double)GetValue(MaxSecondProperty);
+			// TODO: 第1/2頁 下拉選單
+			get
+			{
+				//-------------------------------------------------------------------------------gilbert 2021.08.05
+				MainViewModel.ConfigClass.MaxValue_Chart = (double)GetValue(MaxSecondProperty);
+				return (double)GetValue(MaxSecondProperty);
+			}
+			//get => (double)GetValue(MaxSecondProperty);
 			set => SetValue(MaxSecondProperty, value);
 		}
 

@@ -13,6 +13,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Recycle.ViewModels;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Data;
 
 namespace Recycle.Views
 {
@@ -24,6 +29,27 @@ namespace Recycle.Views
 		public LogPage()
 		{
 			InitializeComponent();
+			//----------------------------------------------
+			LogInformation("按下 [總覽]");
+			int count = 0;
+			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog();
+			if (visErrlog != null)
+			{
+				Clear();
+				foreach (var visErrIdx in visErrlog)
+				{
+					LogInformation(count.ToString()+" ).-------> :: " + visErrIdx.Timestamp.ToString() + " :: " + visErrIdx.Content.ToString());
+					count++;
+				}
+				
+			}
+			else
+			{
+				
+				Clear();
+				LogInformation("==================No Error at [總覽]");
+			}
+			//----------------------------------------------
 		}
 
 		public void LogInformation(string message) => LogMessage(message, App.Current.Resources["brushTitle"] as Brush);
@@ -50,26 +76,123 @@ namespace Recycle.Views
 		private void RadioButton_Checked(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [總覽]");
+			//----------------------------------------------
+			int count = 0;
+			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog();
+			if (visErrlog != null)
+			{
+				Clear();
+				foreach (var visErrIdx in visErrlog)
+				{
+					LogInformation(count.ToString()+" ).-------> :: " + visErrIdx.Timestamp.ToString() + " :: " + visErrIdx.Content.ToString());
+					count++;
+				}
+				
+			}
+			else
+			{
+				
+				Clear();
+				LogInformation("==================No Error at [總覽]");
+			}
+			//----------------------------------------------
 		}
 
 		private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [機械手臂/手臂機構]");
+			//----------------------------------------------
+			int count = 0;
+			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog("RobotArm");
+			if (visErrlog != null)
+			{
+				Clear();
+				foreach (var visErrIdx in visErrlog)
+				{
+					LogInformation(count.ToString()+" ).-------> :: " + visErrIdx.Timestamp.ToString() + " :: " + visErrIdx.Content.ToString());
+					count++;
+				}
+				
+			}
+			else
+			{
+				Clear();
+				LogInformation("==================No Error at [機械手臂/手臂機構]");
+			}
+			//----------------------------------------------
 		}
 
 		private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [視覺系統]");
+			//----------------------------------------------
+			int count = 0;
+			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog("VisionSys");
+			if (visErrlog != null)
+			{
+				Clear();
+				foreach (var visErrIdx in visErrlog)
+				{
+					LogInformation(count.ToString()+" ).-------> :: " + visErrIdx.Timestamp.ToString() + " :: " + visErrIdx.Content.ToString());
+					count++;
+				}
+				
+			}
+			else
+			{
+				Clear();
+				LogInformation("==================No Error at [視覺系統]");
+			}
+			//----------------------------------------------
+
 		}
 
 		private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [輸送帶]");
+			//----------------------------------------------
+			int count = 0;
+			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog("ConveySys");
+			if (visErrlog != null)
+			{
+				Clear();
+				foreach (var visErrIdx in visErrlog)
+				{
+					LogInformation(count.ToString()+" ).-------> :: " + visErrIdx.Timestamp.ToString() + " :: " + visErrIdx.Content.ToString());
+					count++;
+				}
+				
+			}
+			else
+			{
+				Clear();
+				LogInformation("==================No Error at [輸送帶]");
+			}
+			//----------------------------------------------
 		}
 
 		private void RadioButton_Checked_4(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [控制器]");
+			//----------------------------------------------
+			int count = 0;
+			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog("ControSys");
+			if (visErrlog != null)
+			{
+				Clear();
+				foreach (var visErrIdx in visErrlog)
+				{
+					LogInformation(count.ToString()+" ).-------> :: " + visErrIdx.Timestamp.ToString() + " :: " + visErrIdx.Content.ToString());
+					count++;
+				}
+				
+			}
+			else
+			{
+				Clear();
+				LogInformation("==================No Error at [控制器]");
+			}
+			//----------------------------------------------
 		}
 	}
 }

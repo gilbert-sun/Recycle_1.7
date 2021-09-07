@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
-
+using System.Reflection.Emit;
+using MongoDB.Driver;
+using Recycle.Services;
 namespace Recycle.ViewModels
 {
 	public class RobotViewModel : BaseViewModel
@@ -31,7 +33,10 @@ namespace Recycle.ViewModels
 		public const string PARA_VISION_STATUS = "vision_status";
 		public const string PARA_VISION_TOTAL_TIME = "vision_total_time";
 		#endregion
-
+		
+		public long pickTime1 ;
+		private readonly RobotPickMongoServices _robotmongodbServices;
+		private readonly RobotLogMongoServices robotLogMongoServices;
 		public RobotViewModel()
 		{
 			ArmParameters = new RobotParameter[]
@@ -57,7 +62,13 @@ namespace Recycle.ViewModels
 				Parameters[PARA_VISION_STATUS],
 				Parameters[PARA_VISION_TOTAL_TIME]
 			};
+			// for DB demo
+			_robotmongodbServices = new RobotPickMongoServices();
+			robotLogMongoServices = new RobotLogMongoServices();
+			MainViewModel.ConfigClass.gMongoLogDBmodel = robotLogMongoServices;
+			MainViewModel.ConfigClass.gMongoPickDBmodel = _robotmongodbServices;
 
+			// TODO: for demo, remove it
 			Timer = new DispatcherTimer
 			{
 				Interval = TimeSpan.FromSeconds(2)
@@ -78,6 +89,26 @@ namespace Recycle.ViewModels
 			{
 				return (rand.NextDouble() * 100 - 50).ToString("0.00");
 			}
+			
+			
+			//----------------------------------------------------------------------------------------
+			//Api1 : write db for Delta-Robot get what kind of pet bottle now
+			// var conf1 = rand.Next(10, 90);
+			// _robotmongodbServices.Dumpdata(
+			// 	nameof(RobotPickMongoServices.Btype.OTHER),
+			// 	nameof(RobotPickMongoServices.Bkind.PET),
+			// 	conf1,
+			// 	"SinkA",
+			// 	ID);
+			// Api2 : write db for encounting what kind of error(//RobotArm = 0,VisionSys = 1,ConveySys=2,ControSys=3,) 
+			//  robotLogMongoServices.Dumpdata(
+			//  	"Hi -->: "+rand.Next(10, 40).ToString(),
+			//  	"bad",
+			//  	nameof(RobotLogMongoServices.LEkind.VisionSys),
+			//  	ID);
+			//
+			// var timetag = ((DateTimeOffset) DateTime.Now).ToUnixTimeMilliseconds();
+			// var MaxSecond = MainViewModel.ConfigClass.MaxValue_Chart;
 
 			SetArmStatus(randStatus());
 			SetConveyorStatus(randStatus());
@@ -123,7 +154,7 @@ namespace Recycle.ViewModels
 			SinkD.SetParameter(
 				acc: SinkD.Accumulation + rand.Next(1, 100),
 				status: randStatus());
-			//TimePicks.Add(rand.Next(0, 45));
+			TimePicks.Add(rand.Next(0, 45));
 
 			SetEncodeFeedback(rand.Next(1, 100), rand.Next(1, 100));
 		}

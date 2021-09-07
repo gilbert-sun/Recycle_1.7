@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Recycle.Views.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Recycle.Views"
+             xmlns:vm="clr-namespace:Recycle.ViewModels"
+             xmlns:s="clr-namespace:Recycle.Selectors"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             d:DataContext="{d:DesignInstance Type=vm:HomePageViewModel}"
+             Style="{StaticResource styleCtrlPage}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate x:Key="tempOverall">
+            <TextBlock Text="{DynamicResource strComOverall}"/>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!-- Tabs -->
+        <ListBox Style="{StaticResource styleRobotTab}"
+                 ItemsSource="{Binding ItemsSource}"
+                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                 Margin="40,0,0,0">
+            <ListBox.ItemTemplateSelector>
+                <s:TabTemplateSelector OverallTemplate="{StaticResource tempOverall}"/>
+            </ListBox.ItemTemplateSelector>
+        </ListBox>
+        <!-- Content -->
+        <ContentControl x:Name="contentControl"
+                        Grid.Row="1"
+                        Content="{Binding SelectedItem}">
+            <ContentControl.ContentTemplateSelector>
+                <s:TabTemplateSelector >
+                    <s:TabTemplateSelector.OverallTemplate>
+                        <DataTemplate>
+                            <local:OverallView />
+                        </DataTemplate>
+                    </s:TabTemplateSelector.OverallTemplate>
+                    <s:TabTemplateSelector.DefaultTemplate>
+                        <DataTemplate>
+                            <local:RobotDetail />
+                        </DataTemplate>
+                    </s:TabTemplateSelector.DefaultTemplate>
+                </s:TabTemplateSelector>
+            </ContentControl.ContentTemplateSelector>
+        </ContentControl>
+    </Grid>
+</UserControl>

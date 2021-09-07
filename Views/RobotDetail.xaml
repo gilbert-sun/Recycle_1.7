@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Recycle.Views.RobotDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Recycle.Views"
+             xmlns:ctrl="clr-namespace:Recycle.UserControls"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewmodels="clr-namespace:Recycle.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:RobotViewModel}"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <sys:String x:Key="strDateFormat">yyyy/MM/dd, HH:mm</sys:String>
+    </UserControl.Resources>
+    <ScrollViewer >
+        <UniformGrid Style="{StaticResource styleUniformGridMain}" Margin="0,12">
+            <!-- Left -->
+            <Border Style="{StaticResource styleWhiteBorder}"
+                    Padding="24,8"
+                    HorizontalAlignment="Center"
+                    Height="688">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="88"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0,16"
+                               Style="{StaticResource styleTextHeader}"
+                               Text="{Binding Mode=OneWay}"/>
+                    <TextBlock Height="48"
+                               HorizontalAlignment="Right"
+                               LineHeight="24"
+                               TextAlignment="Right"
+                               FontSize="14">
+                        <Run Text="{DynamicResource strComUpTime}"/><Run Text=": "/><Run Text="{Binding StartTime, Mode=OneWay, StringFormat={StaticResource strDateFormat}}"/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource strComTotalUpTime}"/><Run Text=": "/><Run Text="{Binding Duration, Mode=OneWay}"/>
+                    </TextBlock>
+                    <Canvas Width="{Binding ImageWidth}"
+                            Height="{Binding ImageHeight}"
+                            Margin="-24,0"
+                            Grid.Row="2">
+                        <Canvas.Background>
+                            <ImageBrush ImageSource="{Binding ImageFilename}"/>
+                        </Canvas.Background>
+                        <ctrl:StatusLabel Canvas.Left="{Binding Path=PointC.X}" Canvas.Top="{Binding Path=PointC.Y}" Text="{DynamicResource strComConveyor}" Status="{Binding ConveyorStatus}"/>
+                        <ctrl:StatusLabel Canvas.Left="{Binding Path=PointM.X}" Canvas.Top="{Binding Path=PointM.Y}" Text="{DynamicResource strComRoboticArm}" Status="{Binding ArmStatus}"/>
+                        <ctrl:StatusLabel Canvas.Left="{Binding Path=PointV.X}" Canvas.Top="{Binding Path=PointV.Y}" Text="{DynamicResource strComVisionSystem}" Status="{Binding VisionSysStatus}"/>
+                    </Canvas>
+                    <ctrl:ParametersGroup Header="{DynamicResource strComRoboticArm}" Items="{Binding ArmParameters}" Grid.Row="4"/>
+                </Grid>
+            </Border>
+            <StackPanel>
+                <!--<Border Style="{StaticResource styleWhiteBorder}" Height="332">
+                    <local:RobotHistogram/>
+                </Border>-->
+                <Border Style="{StaticResource styleWhiteBorder}" Height="332">
+                    <local:RobotPicks/>
+                </Border>
+            </StackPanel>
+        </UniformGrid>
+    </ScrollViewer>
+</UserControl>

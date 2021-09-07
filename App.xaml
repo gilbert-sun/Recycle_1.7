@@ -1,0 +1,41 @@
+﻿<Application x:Class="Recycle.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:vm="clr-namespace:Recycle.ViewModels"
+             xmlns:cov="clr-namespace:Recycle.Converters"
+             Startup="Application_Startup"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- language must be first -->
+                <ResourceDictionary Source="/Languages/zh-TW.xaml"/>
+                <ResourceDictionary Source="/Resources/Geometries.xaml"/>
+                <ResourceDictionary Source="/Styles/Fonts.xaml"/>
+                <ResourceDictionary Source="/Styles/Theme.xaml"/>
+                <ResourceDictionary Source="/Styles/Chart.xaml"/>
+                <ResourceDictionary Source="/Styles/CustomControl.xaml"/>
+                <ResourceDictionary Source="/Styles/ComboBox.xaml"/>
+                <ResourceDictionary Source="/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/Styles/Border.xaml"/>
+                <ResourceDictionary Source="/Styles/Menu.xaml"/>
+                <ResourceDictionary Source="/Styles/Pages.xaml"/>
+                <ResourceDictionary Source="/Styles/ScrollViewer.xaml"/>
+                <ResourceDictionary Source="/Styles/TabControl.xaml"/>
+                <ResourceDictionary Source="/Styles/Text.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <sys:Boolean x:Key="boolIconOnly">False</sys:Boolean>
+            <sys:Boolean x:Key="boolUseOsk">False</sys:Boolean>
+            <sys:Double x:Key="tabItemWidth">200</sys:Double>
+            <sys:Double x:Key="taskBorderWidth">568</sys:Double>
+            <sys:Int32 x:Key="gridRows">1</sys:Int32>
+            <sys:Int32 x:Key="gridColumns">0</sys:Int32>
+            <cov:StringValueConverter x:Key="covStringValue"/>
+            <cov:InverseConverter x:Key="covInverse"/>
+            <cov:VisibilityConverter x:Key="covVisibility"/>
+            <cov:VisibilityConverter x:Key="covVisibilityInverse" Inverse="True"/>
+            <vm:MainViewModel x:Key="mainViewModel"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Class -->
+    <sys:String x:Key="strClassCh">Ch</sys:String>
+    <sys:String x:Key="strClassColor">Color</sys:String>
+    <sys:String x:Key="strClassNone">None</sys:String>
+    <sys:String x:Key="strClassOil">Oil</sys:String>
+    <sys:String x:Key="strClassOther">Other</sys:String>
+    <sys:String x:Key="strClassP">P</sys:String>
+    <sys:String x:Key="strClassSoy">Soy</sys:String>
+    <sys:String x:Key="strClassTray">Tray</sys:String>
+    <!-- Common -->
+    <sys:String x:Key="strComArm">Arm</sys:String>
+    <sys:String x:Key="strComAdjustment">adjustment</sys:String>
+    <sys:String x:Key="strComAdministrator">Administrator</sys:String>
+    <sys:String x:Key="strComAllGood">All Good</sys:String>
+    <sys:String x:Key="strComApply">Apply</sys:String>
+    <sys:String x:Key="strComController">Controller</sys:String>
+    <sys:String x:Key="strComConveyor">conveyor</sys:String>
+    <sys:String x:Key="strComCum">CUM</sys:String>
+    <sys:String x:Key="strComCurrentSpeed">Current Speed</sys:String>
+    <sys:String x:Key="strComData">data</sys:String>
+    <sys:String x:Key="strComDays">Days</sys:String>
+    <sys:String x:Key="strComEncoderFeedback">Encoder Feedback</sys:String>
+    <sys:String x:Key="strComGood">Good</sys:String>
+    <sys:String x:Key="strComHours">Hours</sys:String>
+    <sys:String x:Key="strComLogin">Login</sys:String>
+    <sys:String x:Key="strComMaxSpeed">Max Speed</sys:String>
+    <sys:String x:Key="strComMins">Mins</sys:String>
+    <sys:String x:Key="strComMotionSettings">Motion Settings</sys:String>
+    <sys:String x:Key="strComMovement">Movement</sys:String>
+    <sys:String x:Key="strComOperator">Operator</sys:String>
+    <sys:String x:Key="strComOverall">Overall</sys:String>
+    <sys:String x:Key="strComPassedNum">Passed num.</sys:String>
+    <sys:String x:Key="strComPassword">Password</sys:String>
+    <sys:String x:Key="strComPause">Pause</sys:String>
+    <sys:String x:Key="strComPickRate">Pick rate</sys:String>
+    <sys:String x:Key="strComPicks">Picks</sys:String>
+    <sys:String x:Key="strComReducer">Reducer</sys:String>
+    <sys:String x:Key="strComReportData">Report Data</sys:String>
+    <sys:String x:Key="strComReset">Reset</sys:String>
+    <sys:String x:Key="strComRoboticArm">Robotic Arm</sys:String>
+    <sys:String x:Key="strComStop">Stop</sys:String>
+    <sys:String x:Key="strComStride">Stride</sys:String>
+    <sys:String x:Key="strComSuctionVacuum">suction / vacuum</sys:String>
+    <sys:String x:Key="strComTotalUpTime">Total up time</sys:String>
+    <sys:String x:Key="strComUpTime">Up time</sys:String>
+    <sys:String x:Key="strComUsedCapacity">Used Capacity</sys:String>
+    <sys:String x:Key="strComVisionSystem">Vision System</sys:String>
+    <sys:String x:Key="strComWrongPw">Wrong password. Please try again</sys:String>
+    <!-- Demo -->
+    <sys:String x:Key="strDemo2dCircle">2D Circle</sys:String>
+    <sys:String x:Key="strDemoArc">Arc</sys:String>
+    <sys:String x:Key="strDemoCycleMovement">Cycle movement</sys:String>
+    <sys:String x:Key="strDemoPyramid">Pyramid</sys:String>
+    <sys:String x:Key="strDemoRectangle">Rectangle</sys:String>
+    <sys:String x:Key="strDemoUGeo">U</sys:String>
+    <!-- Description -->
+    <sys:String x:Key="strDesRobotCalib">Robot calibration</sys:String>
+    <!-- Log -->
+    <sys:String x:Key="strLogCritical">Critical</sys:String>
+    <sys:String x:Key="strLogInformation">Information</sys:String>
+    <sys:String x:Key="strLogWarning">Warning</sys:String>
+    <!-- Navi -->
+    <sys:String x:Key="strNaviAdjust">CLBR</sys:String>
+    <sys:String x:Key="strNaviHome">Home</sys:String>
+    <sys:String x:Key="strNaviLog">Log</sys:String>
+    <sys:String x:Key="strNaviRealTimeStatus">Real Time Status</sys:String>
+    <sys:String x:Key="strNaviStatus">Status</sys:String>
+    <sys:String x:Key="strNaviTasks">Tasks</sys:String>
+</ResourceDictionary>

@@ -1,0 +1,220 @@
+﻿<UserControl x:Class="Recycle.Views.AdjustPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ctrl="clr-namespace:Recycle.UserControls"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <Style x:Key="styleWhiteBorderAd" TargetType="Border" BasedOn="{StaticResource styleWhiteBorder}">
+            <Setter Property="IsEnabled" Value="{Binding Source={StaticResource mainViewModel}, Path=CanAdjust}"/>
+        </Style>
+        <Style x:Key="styleTextBoxAd" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="IsReadOnly" Value="{Binding Source={StaticResource mainViewModel}, Path=CanAdjust, Converter={StaticResource covInverse}}"/>
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Template" Value="{StaticResource tempReadOnlyTextBox}"/>
+                    <Setter Property="ctrl:TextBoxHelper.IsMonitoring" Value="False"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="styleTextUnderlineAd" TargetType="{x:Type TextBox}" BasedOn="{StaticResource styleTextUnderline}">
+            <Setter Property="IsReadOnly" Value="{Binding Source={StaticResource mainViewModel}, Path=CanAdjust, Converter={StaticResource covInverse}}"/>
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="TextAlignment" Value="Left"/>
+                    <Setter Property="Template" Value="{StaticResource tempReadOnlyTextBox}"/>
+                    <Setter Property="ctrl:TextBoxHelper.IsMonitoring" Value="False"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid DataContext="{Binding SelectedRobot, Source={StaticResource mainViewModel}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="40,0" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource styleTextHeader}" Text="Robot Name" VerticalAlignment="Center"/>
+            <Button Style="{StaticResource styleWhiteButton}" Content="Home" Height="40" Margin="33,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <UniformGrid Style="{StaticResource styleUniformGridMain}" Margin="0,12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <!-- Demo -->
+                    <Border Style="{StaticResource styleWhiteBorderAd}" Width="376" Height="208">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="8"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="8"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="12"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="24"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Demo" Style="{StaticResource styleTextHeader}" Grid.ColumnSpan="5"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoCycleMovement}" Grid.Row="2"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemo2dCircle}" Grid.Row="2" Grid.Column="2"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoArc}" Grid.Row="2" Grid.Column="4"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemo2dCircle}" Grid.Row="4"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoRectangle}" Grid.Row="4" Grid.Column="2"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoUGeo}" Grid.Row="4" Grid.Column="4"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource styleWhiteBorder}" Width="376" Height="208" Grid.Row="1">
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="{x:Type ctrl:AdvLabel}" BasedOn="{StaticResource {x:Type ctrl:AdvLabel}}">
+                                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24"/>
+                                <RowDefinition Height="12"/>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="64"/>
+                            </Grid.RowDefinitions>
+                            <DockPanel Grid.ColumnSpan="4" LastChildFill="False">
+                                <TextBlock Style="{StaticResource styleTextHeader}"
+                                           VerticalAlignment="Center"
+                                           Text="{DynamicResource strComEncoderFeedback}"/>
+                                <TextBlock VerticalAlignment="Center"
+                                           FontWeight="Medium"
+                                           FontSize="14"
+                                           Foreground="{DynamicResource brushNotiRed}"
+                                           DockPanel.Dock="Right"
+                                           Text="{Binding EncodeFeedback, Mode=OneWay}"/>
+                            </DockPanel>
+                            <ctrl:AdvLabel ctrl:AdvLabel.ParameterKey="encoder_x" Grid.Row="2"/>
+                            <ctrl:AdvLabel ctrl:AdvLabel.ParameterKey="encoder_y" Grid.Row="2" Grid.Column="1"/>
+                            <ctrl:AdvLabel ctrl:AdvLabel.ParameterKey="encoder_z" Grid.Row="2" Grid.Column="2"/>
+                            <ctrl:AdvLabel ctrl:AdvLabel.ParameterKey="encoder_j1" Grid.Row="3" />
+                            <ctrl:AdvLabel ctrl:AdvLabel.ParameterKey="encoder_j2" Grid.Row="3" Grid.Column="1"/>
+                            <ctrl:AdvLabel ctrl:AdvLabel.ParameterKey="encoder_j3" Grid.Row="3" Grid.Column="2"/>
+                        </Grid>
+                    </Border>
+                    <!-- Micro adjust -->
+                    <Border Style="{StaticResource styleWhiteBorderAd}"
+                            Width="168" 
+                            Height="440" 
+                            Grid.Column="1" 
+                            Grid.RowSpan="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="24"/>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="24"/>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="24"/>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="24"/>
+                                <RowDefinition Height="64"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource styleTextHeader}" Text="{DynamicResource strComAdjustment}"/>
+                            <TextBox Style="{StaticResource styleTextUnderlineAd}"
+                                     ctrl:TextBoxHelper.Watermark="{DynamicResource strComStride}"
+                                     Grid.Row="2"/>
+                            <UniformGrid Grid.Row="4" Rows="1">
+                                <TextBlock Style="{StaticResource styleTextHeader}"
+                                           FontSize="24"
+                                           VerticalAlignment="Center"
+                                           Text="X"/>
+                                <RepeatButton Style="{StaticResource styleIncreaseButton}"
+                                              VerticalAlignment="Center"/>
+                                <RepeatButton Style="{StaticResource styleDecreaseButton}"
+                                              HorizontalAlignment="Right"
+                                              VerticalAlignment="Center"/>
+                            </UniformGrid>
+                            <UniformGrid Grid.Row="6" Rows="1">
+                                <TextBlock Style="{StaticResource styleTextHeader}"
+                                           FontSize="24"
+                                           VerticalAlignment="Center"
+                                           Text="Y"/>
+                                <RepeatButton Style="{StaticResource styleIncreaseButton}"
+                                              VerticalAlignment="Center"/>
+                                <RepeatButton Style="{StaticResource styleDecreaseButton}"
+                                              HorizontalAlignment="Right"
+                                              VerticalAlignment="Center"/>
+                            </UniformGrid>
+                            <UniformGrid Grid.Row="8" Rows="1">
+                                <TextBlock Style="{StaticResource styleTextHeader}"
+                                           FontSize="24"
+                                           VerticalAlignment="Center"
+                                           Text="Z"/>
+                                <RepeatButton Style="{StaticResource styleIncreaseButton}"
+                                              VerticalAlignment="Center"/>
+                                <RepeatButton Style="{StaticResource styleDecreaseButton}"
+                                              HorizontalAlignment="Right"
+                                              VerticalAlignment="Center"/>
+                            </UniformGrid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <StackPanel>
+                    <Border Style="{StaticResource styleWhiteBorderAd}" Height="264">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="12"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="96"/>
+                                <ColumnDefinition Width="172"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition Height="72"/>
+                                <RowDefinition Height="12"/>
+                                <RowDefinition Height="72"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource styleTextHeader}"
+                                       Grid.ColumnSpan="5"
+                                       Text="匯入 DH File: Delta_001.xml"/>
+                            <TextBox Grid.Row="2"
+                                     Style="{StaticResource styleTextBoxAd}"
+                                     Text="{Binding DHe1, Mode=TwoWay}"
+                                     ctrl:TextBoxHelper.Watermark="e"/>
+                            <TextBox Grid.Row="2"
+                                     Grid.Column="2"
+                                     Style="{StaticResource styleTextBoxAd}"
+                                     Text="{Binding DHr, Mode=TwoWay}"
+                                     ctrl:TextBoxHelper.Watermark="r"/>
+                            <TextBox Grid.Row="4"
+                                     Style="{StaticResource styleTextBoxAd}"
+                                     Text="{Binding DHe2, Mode=TwoWay}"
+                                     ctrl:TextBoxHelper.Watermark="e"/>
+                            <TextBox Grid.Row="4"
+                                     Grid.Column="2"
+                                     Style="{StaticResource styleTextBoxAd}"
+                                     Text="{Binding DHre, Mode=TwoWay}"
+                                     ctrl:TextBoxHelper.Watermark="re"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </UniformGrid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

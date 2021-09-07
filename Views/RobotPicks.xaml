@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Recycle.Views.RobotPicks"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ctrl="clr-namespace:Recycle.UserControls" 
+             xmlns:viewmodels="clr-namespace:Recycle.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:RobotViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="16"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel >
+            <TextBlock Style="{StaticResource styleTextHeader}"
+                       DockPanel.Dock="Left"
+                       Text="{DynamicResource strComPicks}"/>
+            <StackPanel DockPanel.Dock="Right"
+                        DataContext="{StaticResource mainViewModel}"
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Right">
+                <RadioButton Content="{DynamicResource strComMins}"
+                             IsChecked="{Binding PicksUnit, Mode=TwoWay, Converter={StaticResource covStringValue}, ConverterParameter=minute}"
+                             Margin="0,0,60,0"/>
+                <RadioButton Content="{DynamicResource strComHours}"
+                             IsChecked="{Binding PicksUnit, Mode=TwoWay, Converter={StaticResource covStringValue}, ConverterParameter=hour}"
+                             Background="{DynamicResource brushIndigo}"
+                             Margin="0,0,60,0"/>
+                <RadioButton Content="{DynamicResource strComDays}"
+                             IsChecked="{Binding PicksUnit, Mode=TwoWay, Converter={StaticResource covStringValue}, ConverterParameter=day}"
+                             Background="{DynamicResource brushDarkRed}"/>
+            </StackPanel>
+        </DockPanel>
+        <ctrl:TimelineChart DataContext="{Binding TimePicks}"
+                            Grid.Row="2"
+                            LabelY="{DynamicResource strComPicks}"
+                            Now="{Binding Now}"
+                            TimeUnit="{Binding Source={StaticResource mainViewModel}, Path=PicksUnit}"
+                            DatePoints="{Binding Points}"/>
+    </Grid>
+</UserControl>

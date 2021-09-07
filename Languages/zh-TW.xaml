@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Class -->
+    <sys:String x:Key="strClassCh">農藥</sys:String>
+    <sys:String x:Key="strClassColor">非透明</sys:String>
+    <sys:String x:Key="strClassNone">無</sys:String>
+    <sys:String x:Key="strClassOil">油</sys:String>
+    <sys:String x:Key="strClassOther">其他</sys:String>
+    <sys:String x:Key="strClassP">透明</sys:String>
+    <sys:String x:Key="strClassSoy">醬油</sys:String>
+    <sys:String x:Key="strClassTray">平版</sys:String>
+    <!-- Common -->
+    <sys:String x:Key="strComArm">手臂</sys:String>
+    <sys:String x:Key="strComAdjustment">微調</sys:String>
+    <sys:String x:Key="strComAdministrator">管理員</sys:String>
+    <sys:String x:Key="strComAllGood">全部良好</sys:String>
+    <sys:String x:Key="strComApply">套用</sys:String>
+    <sys:String x:Key="strComController">控制器</sys:String>
+    <sys:String x:Key="strComConveyor">輸送帶</sys:String>
+    <sys:String x:Key="strComCum">累計</sys:String>
+    <sys:String x:Key="strComCurrentSpeed">目前速度</sys:String>
+    <sys:String x:Key="strComData">數據</sys:String>
+    <sys:String x:Key="strComDays">日</sys:String>
+    <sys:String x:Key="strComEncoderFeedback">編碼器回授資訊</sys:String>
+    <sys:String x:Key="strComGood">良好</sys:String>
+    <sys:String x:Key="strComHours">時</sys:String>
+    <sys:String x:Key="strComLogin">登入</sys:String>
+    <sys:String x:Key="strComMaxSpeed">最大速度</sys:String>
+    <sys:String x:Key="strComMins">分</sys:String>
+    <sys:String x:Key="strComMotionSettings">動作設定值</sys:String>
+    <sys:String x:Key="strComMovement">一般運動</sys:String>
+    <sys:String x:Key="strComOperator">操作員</sys:String>
+    <sys:String x:Key="strComOverall">總覽</sys:String>
+    <sys:String x:Key="strComPassedNum">通過支數</sys:String>
+    <sys:String x:Key="strComPassword">密碼</sys:String>
+    <sys:String x:Key="strComPause">暫停</sys:String>
+    <sys:String x:Key="strComPickRate">夾取率</sys:String>
+    <sys:String x:Key="strComPicks">手臂運作次數</sys:String>
+    <sys:String x:Key="strComReducer">馬逹狀態</sys:String>
+    <sys:String x:Key="strComReportData">Report Data</sys:String>
+    <sys:String x:Key="strComReset">重置</sys:String>
+    <sys:String x:Key="strComRoboticArm">機器手臂/手臂機構</sys:String>
+    <sys:String x:Key="strComStop">停止</sys:String>
+    <sys:String x:Key="strComStride">步長</sys:String>
+    <sys:String x:Key="strComSuctionVacuum">吸嘴空壓</sys:String>
+    <sys:String x:Key="strComTotalUpTime">總運行時間</sys:String>
+    <sys:String x:Key="strComUpTime">開機時間</sys:String>
+    <sys:String x:Key="strComUsedCapacity">使用容量</sys:String>
+    <sys:String x:Key="strComVisionSystem">視覺系統</sys:String>
+    <sys:String x:Key="strComWrongPw">密碼錯誤</sys:String>
+    <!-- Demo -->
+    <sys:String x:Key="strDemo2dCircle">2D 圓圈</sys:String>
+    <sys:String x:Key="strDemoArc">弧形</sys:String>
+    <sys:String x:Key="strDemoCycleMovement">週期運動</sys:String>
+    <sys:String x:Key="strDemoPyramid">金字塔</sys:String>
+    <sys:String x:Key="strDemoRectangle">矩形</sys:String>
+    <sys:String x:Key="strDemoUGeo">U 形</sys:String>
+    <!-- Description -->
+    <sys:String x:Key="strDesRobotCalib">機器手臂校正與測試</sys:String>
+    <!-- Log -->
+    <sys:String x:Key="strLogCritical">嚴重</sys:String>
+    <sys:String x:Key="strLogInformation">一般</sys:String>
+    <sys:String x:Key="strLogWarning">注意</sys:String>
+    <!-- Navi -->
+    <sys:String x:Key="strNaviAdjust">校正</sys:String>
+    <sys:String x:Key="strNaviHome">首頁</sys:String>
+    <sys:String x:Key="strNaviLog">紀錄</sys:String>
+    <sys:String x:Key="strNaviRealTimeStatus">Real Time Status</sys:String>
+    <sys:String x:Key="strNaviStatus">狀態</sys:String>
+    <sys:String x:Key="strNaviTasks">任務</sys:String>
+</ResourceDictionary>

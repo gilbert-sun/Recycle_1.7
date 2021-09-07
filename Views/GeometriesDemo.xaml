@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Recycle.Views.GeometriesDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Recycle.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="brushMain" Color="White"/>
+        <Style TargetType="Path">
+            <Setter Property="Fill" Value="{StaticResource brushMain}"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="Gray">
+        <WrapPanel>
+            <Path Data="{StaticResource geoAccount}" ToolTip="geoAccount"/>
+            <Path Data="{StaticResource geoAdjust}" ToolTip="geoAdjust"/>
+            <Path Data="{StaticResource geoArrow}" ToolTip="geoArrow"/>
+            <Path Data="{StaticResource geoAttention}" ToolTip="geoAttention"/>
+            <Path Data="{StaticResource geoBad}" ToolTip="geoBad"/>
+            <Path Data="{StaticResource geoChecked}" ToolTip="geoChecked"/>
+            <Path Data="{StaticResource geoDecrease}" ToolTip="geoDecrease"/>
+            <Path Data="{StaticResource geoFullscreen}" ToolTip="geoFullscreen"/>
+            <Path Data="{StaticResource geoHome}" ToolTip="geoHome"/>
+            <Path Data="{StaticResource geoIncrease}" ToolTip="geoIncrease"/>
+            <Path Data="{StaticResource geoLanguage}" ToolTip="geoLanguage"/>
+            <Path Data="{StaticResource geoLog}" ToolTip="geoLog"/>
+            <Path Data="{StaticResource geoLogoSubtitle}" ToolTip="geoLogoSubtitle"/>
+            <Path Data="{StaticResource geoLogoTitle}" ToolTip="geoLogoTitle"/>
+            <Path Data="{StaticResource geoRoundChecked}" ToolTip="geoRoundChecked"/>
+            <Path Data="{StaticResource geoSink}" ToolTip="geoSink"/>
+            <Path Data="{StaticResource geoSinkA}" ToolTip="geoSinkA"/>
+            <Path Data="{StaticResource geoSinkB}" ToolTip="geoSinkB"/>
+            <Path Data="{StaticResource geoSinkC}" ToolTip="geoSinkC"/>
+            <Path Data="{StaticResource geoSinkD}" ToolTip="geoSinkD"/>
+            <Path Data="{StaticResource geoStatus}" ToolTip="geoStatus"/>
+            <Path Data="{StaticResource geoTriangle}" ToolTip="geoTriangle"/>
+            <Path Data="{StaticResource geoUnchecked}" ToolTip="geoUnchecked"/>
+            <Path Data="{StaticResource geoUnfullScreen}" ToolTip="geoUnfullScreen"/>
+        </WrapPanel>
+    </Grid>
+</UserControl>

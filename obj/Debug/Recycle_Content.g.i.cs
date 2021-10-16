@@ -8,12 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("api/index.md")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("articles/intro.md")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("articles/toc.md")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/compression/snappy/lib/win/snappy32.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/compression/snappy/lib/win/snappy64.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/compression/zstandard/lib/win/libzstd.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("docfx.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("index.md")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("libmongocrypt.dylib")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("libmongocrypt.so")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mongocrypt.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("toc.yml")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/mongodb.libmongocrypt.1.2.2/runtimes/win/native/mongocrypt.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/mongodb.driver.core.2.13.1/runtimes/win/native/snappy32.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/mongodb.driver.core.2.13.1/runtimes/win/native/snappy64.dll")]

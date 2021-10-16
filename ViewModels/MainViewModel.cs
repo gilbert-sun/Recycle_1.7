@@ -178,7 +178,7 @@ namespace Recycle.ViewModels
 			robotsSrc.Add(robot.ID, robot);
 			Robots.Add(robot);
 		}
-
+//-------------------------------------gilbert start 2021.0905
 		public  static ClassData getSinkData(string st)
 		{
 			var val = new ClassData();
@@ -208,6 +208,7 @@ namespace Recycle.ViewModels
 			}
 			return val;
 		}
+		//-------------------------------------gilbert end 2021.0905
 		// Classes
 		private ClassData selectedClassA = ClassData.P;
 
@@ -382,25 +383,41 @@ namespace Recycle.ViewModels
 		public int SelectedPercentA
 		{
 			get => selectedPercentA;
-			set => selectedPercentA = value;
+			set
+			{
+				selectedPercentA = value;
+				RaisePropertyChanged(nameof(selectedPercentA));
+			}
 		}
 
 		public int SelectedPercentB
 		{
 			get => selectedPercentB;
-			set => selectedPercentB = value;
+			set
+			{
+				selectedPercentB = value;
+				RaisePropertyChanged(nameof(selectedPercentB));
+			}
 		}
 
 		public int SelectedPercentC
 		{
 			get => selectedPercentC;
-			set => selectedPercentC = value;
+			set
+			{
+				selectedPercentC = value;
+				RaisePropertyChanged(nameof(selectedPercentC));
+			}
 		}
 
 		public int SelectedPercentD
 		{
 			get => selectedPercentD;
-			set => selectedPercentD = value;
+			set
+			{
+				selectedPercentD = value;
+				RaisePropertyChanged(nameof(selectedPercentD));
+			}
 		}
 
 		public ClassData[] ClassDatas { get; private set; } = new[]

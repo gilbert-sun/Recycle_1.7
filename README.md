@@ -57,15 +57,15 @@
 --WPF對應手臂有五個主畫面,分別對應首頁,任務,狀態,校正,紀錄等,相關畫面如下
 
 ## WPF 第一頁面(首頁,Main Page):
-![img.png](./images/img.png)
+![img.png](./Images/img.png)
 ## WPF 第二頁面(任務,Task Page):
-![img1.png](./images/img1.png)
+![img1.png](./Images/img1.png)
 ## WPF 第三頁面(狀態,Status Page):
-![img2.png](./images/img2.png)
+![img2.png](./Images/img2.png)
 ## WPF 第四頁面(校正,Cali Page):
-![img3.png](./images/img3.png)
+![img3.png](./Images/img3.png)
 ## WPF 第五頁面(紀錄,Rec Page):
-![img4.png](./images/img4.png)
+![img4.png](./Images/img4.png)
 
 
 

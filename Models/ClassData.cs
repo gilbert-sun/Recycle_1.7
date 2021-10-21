@@ -43,15 +43,15 @@ namespace Recycle.Models
 			}
 		}
 	}
-
+	//-------------------------new sequence 2021.09.16
 	public enum ClassType
 	{
+		P,
+		OIL,
+		SOY,
+		COLOR,
 		OTHER,
 		CH,
-		COLOR,
-		OIL,
-		P,
-		SOY,
 		TRAY,
 		NONE
 	}

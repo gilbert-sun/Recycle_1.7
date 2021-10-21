@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
+//-------------------------------------------------- gilbert start 2021.09.05
 using System.Reflection.Emit;
 using MongoDB.Driver;
 using Recycle.Services;
+//-------------------------------------------------- gilbert end 2021.09.05
 namespace Recycle.ViewModels
 {
 	public class RobotViewModel : BaseViewModel
@@ -33,10 +35,11 @@ namespace Recycle.ViewModels
 		public const string PARA_VISION_STATUS = "vision_status";
 		public const string PARA_VISION_TOTAL_TIME = "vision_total_time";
 		#endregion
-		
+		//-------------------------------------------------- gilbert start 2021.09.05
 		public long pickTime1 ;
 		private readonly RobotPickMongoServices _robotmongodbServices;
 		private readonly RobotLogMongoServices robotLogMongoServices;
+		//-------------------------------------------------- gilbert end 2021.09.05
 		public RobotViewModel()
 		{
 			ArmParameters = new RobotParameter[]
@@ -62,23 +65,57 @@ namespace Recycle.ViewModels
 				Parameters[PARA_VISION_STATUS],
 				Parameters[PARA_VISION_TOTAL_TIME]
 			};
+			//-------------------------------------------------- gilbert start 2021.09.05
 			// for DB demo
 			_robotmongodbServices = new RobotPickMongoServices();
 			robotLogMongoServices = new RobotLogMongoServices();
 			MainViewModel.ConfigClass.gMongoLogDBmodel = robotLogMongoServices;
 			MainViewModel.ConfigClass.gMongoPickDBmodel = _robotmongodbServices;
 
-			// TODO: for demo, remove it
-			Timer = new DispatcherTimer
-			{
-				Interval = TimeSpan.FromSeconds(2)
-			};
-			Timer.Tick += Timer_Tick;
-			Timer.Start();
-		}
+            //// TODO: for demo, remove it
+            Timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(2)
+            };
+            //Timer.Tick += Timer_Tick; //DEMO
+            Timer.Tick += Timer2_Tick; // plot
+            Timer.Start();
+        }
 
-		// TODO: for demo, remove it
-		private void Timer_Tick(object sender, EventArgs e)
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+            var MaxSecond = MainViewModel.ConfigClass.MaxValue_Chart;
+            var timetagNow = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            switch (MaxSecond)
+            {
+                case 15:
+                case 35:
+                // pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime(1,1,"","");
+                // pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow,1,1,"","");
+                // break;
+                case 1020:
+                    // pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime(2,1,"","");
+                    pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow, 2, 1, "", "");
+                    break;
+                case 3720:
+                    // pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime(60,1,"","");
+                    pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow, 60, 1, "", "");
+                    break;
+                case 449280:
+                    // pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime(60,8,"","");
+                    pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow, 60, 8, "", "");
+                    break;
+            }
+
+            if (pickTime1 != null)
+                TimePicks.Add((double)pickTime1);
+            // TimePicks.Add(rand.Next(0, 60));
+            else
+                TimePicks.Add(0.1);
+        }
+
+        // TODO: for demo, remove it
+        private void Timer_Tick(object sender, EventArgs e)
 		{
 			Random rand = new Random(Environment.TickCount);
 			ComponentStatus randStatus()
@@ -91,7 +128,7 @@ namespace Recycle.ViewModels
 			}
 			
 			
-			//----------------------------------------------------------------------------------------
+			//-------------------------------------------------- gilbert start 2021.09.05
 			//Api1 : write db for Delta-Robot get what kind of pet bottle now
 			var conf1 = rand.Next(10, 90);
 			_robotmongodbServices.Dumpdata(
@@ -101,12 +138,12 @@ namespace Recycle.ViewModels
 				"SinkA",
 				ID);
 			// Api2 : write db for encounting what kind of error(//RobotArm = 0,VisionSys = 1,ConveySys=2,ControSys=3,) 
-			//  robotLogMongoServices.Dumpdata(
-			//  	"Hi -->: "+rand.Next(10, 40).ToString(),
-			//  	"bad",
-			//  	nameof(RobotLogMongoServices.LEkind.VisionSys),
-			//  	ID);
-			//
+			robotLogMongoServices.Dumpdata(
+				"Hi -->: "+rand.Next(10, 40).ToString(),
+				"bad",
+				nameof(RobotLogMongoServices.LEkind.VisionSys),
+				ID);
+			
 			var timetag = ((DateTimeOffset) DateTime.Now).ToUnixTimeMilliseconds();
 			var MaxSecond = MainViewModel.ConfigClass.MaxValue_Chart;
 
@@ -131,11 +168,12 @@ namespace Recycle.ViewModels
 					pickTime1 = _robotmongodbServices.Get_petCurAmount_perUnitTime1(timetagNow,60,8,"","");
 					break;
 			}
-
+			//-------------------------------------------------- gilbert end 2021.09.05
 			SetArmStatus(randStatus());
 			SetConveyorStatus(randStatus());
 			SetVisionSysStatus(randStatus());
 
+			// TODO: 1, 3頁參數設定
 			// 機械手臂/手臂機構 參數
 			Parameters[PARA_CONTROLLER].SetComponentStatus(randStatus());
 			Parameters[PARA_REDUCER_STATUS].SetComponentStatus(randStatus());
@@ -156,7 +194,7 @@ namespace Recycle.ViewModels
 			Parameters[PARA_VISION_STATUS].SetComponentStatus(randStatus());
 			Parameters[PARA_VISION_TOTAL_TIME].SetParameter(string.Format("{0:dd} days {0:hh} hours", DateTime.Now));
 
-			// 編碼器回授資訊參數
+			// TODO: 第四頁 編碼器回授資訊參數
 			Parameters[PARA_ENCODER_J1].SetParameter(randDouble());
 			Parameters[PARA_ENCODER_J2].SetParameter(randDouble());
 			Parameters[PARA_ENCODER_J3].SetParameter(randDouble());
@@ -176,6 +214,7 @@ namespace Recycle.ViewModels
 			SinkD.SetParameter(
 				acc: SinkD.Accumulation + rand.Next(1, 100),
 				status: randStatus());
+			//-------------------------------------------------- gilbert start 2021.09.05
 			// TimePicks.Add(rand.Next(0, 45));
 			if (pickTime1 != null)
 				TimePicks.Add((double)pickTime1);
@@ -183,7 +222,18 @@ namespace Recycle.ViewModels
 			else
 				TimePicks.Add(0.1);
 			SetEncodeFeedback(rand.Next(1, 100), rand.Next(1, 100));
+			//-------------------------------------------------- gilbert end 2021.09.05
 		}
+
+        public void LogEnevt(string content, string status, string btType, string robotID)
+        {
+            robotLogMongoServices.Dumpdata(content, status, btType, robotID);
+        }
+
+        public void LogObject(string btName, string btType, int conf, string sink, string robotID)
+        {
+            _robotmongodbServices.Dumpdata(btName, btType, conf, sink, robotID);
+        }
 
 		// Fields
 		private readonly DispatcherTimer Timer;
@@ -201,7 +251,7 @@ namespace Recycle.ViewModels
 			[PARA_ENCODER_J3] = new RobotParameter { Value = "0.0", Subtitle = "J3" },
 			[PARA_ENCODER_X] = new RobotParameter { Value = "46 cm/s", Subtitle = "X" },
 			[PARA_ENCODER_Y] = new RobotParameter { Value = "0.0", Subtitle = "Y" },
-			[PARA_ENCODER_Z] = new RobotParameter { Value = "0.0", Subtitle = "Z" },
+			[PARA_ENCODER_Z] = new RobotParameter { Value = "0.0", Subtitle = "Z" },			
 			[PARA_CONTROLLER] = new RobotParameter { Value = "Good", Subtitle = new ResourceObject("strComController") },
 			[PARA_CONVEYOR_AXIS_1] = new RobotParameter { Value = "46 cm/s", Subtitle = "Axis 1st" },
 			[PARA_CURRENT_SPEED] = new RobotParameter { Value = "6800", Subtitle = new ResourceObject("strComCurrentSpeed") },
@@ -211,29 +261,29 @@ namespace Recycle.ViewModels
 			[PARA_VISION_STATUS] = new RobotParameter { Value = "Good", Subtitle = new ResourceObject("strNaviStatus") },
 			[PARA_VISION_TOTAL_TIME] = new RobotParameter { Value = "7 days 17 hours", Subtitle = "Total Time" },
 		};
+		//-------------------------------------------------- gilbert start 2021.09.05
+		private double dHe;
 
-		private double dHe1;
+        private double dHf;
 
-		private double dHe2;
+        private double dHre;
 
-		private double dHr;
+        private double dHrf;
 
-		private double dHre;
+        private double acMaxSpeed;
 
-		private double acMaxSpeed;
+        private double acSpeedRate;
 
-		private double acSpeedRate;
+        private double acLineRate;
 
-		private double acLineRate;
+        private double acP2pAcc;
 
-		private double acP2pAcc;
+        private double acP2pDsc;
 
-		private double acP2pDsc;
+        private double acLineAcc;
 
-		private double acLineAcc;
-
-		private double acLineDsc;
-
+        private double acLineDsc;
+		//-------------------------------------------------- gilbert end 2021.09.05
 		// Properties
 		public string ID { get; set; }
 
@@ -244,36 +294,26 @@ namespace Recycle.ViewModels
 		public double ImageHeight { get; set; }
 
 		public string ImageFilename { get; set; }
-
+		//-------------------------------------------------- gilbert start 2021.09.05
 		public string EncodeFeedback { get; private set; }
 
-		public double DHe1
+		public double DHe
 		{
-			get => dHe1;
+			get => dHe;
 			set
 			{
-				dHe1 = value;
-				RaisePropertyChanged(nameof(DHe1));
+				dHe = value;
+				RaisePropertyChanged(nameof(DHe));
 			}
 		}
 
-		public double DHe2
+		public double DHf
 		{
-			get => dHe2;
+			get => dHf;
 			set
 			{
-				dHe2 = value;
-				RaisePropertyChanged(nameof(DHe2));
-			}
-		}
-
-		public double DHr
-		{
-			get => dHr;
-			set
-			{
-				dHr = value;
-				RaisePropertyChanged(nameof(DHr));
+				dHf = value;
+				RaisePropertyChanged(nameof(DHf));
 			}
 		}
 
@@ -287,6 +327,16 @@ namespace Recycle.ViewModels
 			}
 		}
 
+		public double DHrf
+		{
+			get => dHrf;
+			set
+			{
+				dHrf = value;
+				RaisePropertyChanged(nameof(DHrf));
+			}
+		}
+		//-------------------------------------------------- gilbert end 2021.09.05
 		public Point PointC { get; set; }
 
 		public Point PointM { get; set; }
@@ -387,7 +437,7 @@ namespace Recycle.ViewModels
 		{
 			Label = "D Sink"
 		};
-
+		//-------------------------------------------------- gilbert start 2021.09.05
 		public double AcMaxSpeed
 		{
 			get => acMaxSpeed;
@@ -457,7 +507,7 @@ namespace Recycle.ViewModels
 				RaisePropertyChanged(nameof(AcLineDsc));
 			}
 		}
-
+		//-------------------------------------------------- gilbert end 2021.09.05
 		// Methods
 		public void SetStartTime(DateTime dateTime)
 		{
@@ -470,13 +520,13 @@ namespace Recycle.ViewModels
 			Duration = duration;
 			RaisePropertyChanged(nameof(Duration));
 		}
-
+		//-------------------------------------------------- gilbert start 2021.09.05
 		public void SetEncodeFeedback(double p1, double p2)
 		{
 			EncodeFeedback = string.Format("{0} cm/s, {1} m/min", p1, p2);
 			RaisePropertyChanged(nameof(EncodeFeedback));
 		}
-
+		//-------------------------------------------------- gilbert end 2021.09.05
 		// 機械手臂/手臂機構狀態
 		public void SetArmStatus(ComponentStatus status)
 		{

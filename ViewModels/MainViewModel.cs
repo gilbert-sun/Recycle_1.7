@@ -6,15 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Windows;
+//-------------------------------------gilbert start 2021.0905
 using Recycle.Services;
 using System.Diagnostics;
 using System.Text.Json;
+//-------------------------------------gilbert end
 
 namespace Recycle.ViewModels
 {
 	public class MainViewModel : BaseViewModel
 	{
-		public static MainViewModel Instance => App.Current.Resources["mainViewModel"] as MainViewModel;
+		public static MainViewModel Instance => App.Current.Resources["mainViewModel"] as MainViewModel;		
 
 		public static Lazy<int[]> ClassPercentsFactory = new Lazy<int[]>(() =>
 		{
@@ -30,6 +32,7 @@ namespace Recycle.ViewModels
 		{
 			Initialize();
 			SelectedRobot = Robots.FirstOrDefault();
+			load_defaultSetting();
 		}
 
 		private string picksUnit = TimeUnit.MINUTE;
@@ -91,6 +94,8 @@ namespace Recycle.ViewModels
 				{
 					picksUnit = value;
 					RaisePropertyChanged(nameof(PicksUnit));
+
+					// TODO: 第1頁 變更單位
 				}
 			}
 		}
@@ -113,12 +118,14 @@ namespace Recycle.ViewModels
 			var root = new DirectoryInfo(dir);
 			if (!root.Exists)
 			{
+				Console.WriteLine("!root.Exists");
 				return;
 			}
 			foreach (var dirInfo in root.GetDirectories())
 			{
 				if (dirInfo.GetFiles("index.ini").FirstOrDefault() is FileInfo fileInfo)
 				{
+					
 					CreateRobotViewModel(fileInfo);
 					if (Robots.Count >= 4)
 					{
@@ -150,7 +157,7 @@ namespace Recycle.ViewModels
 			{
 				return;
 			}
-			var robot = new RobotViewModel
+			var robot = new RobotViewModel			
 			{
 				ID = data["id"],
 				Name = data["name"],
@@ -178,7 +185,7 @@ namespace Recycle.ViewModels
 			robotsSrc.Add(robot.ID, robot);
 			Robots.Add(robot);
 		}
-//-------------------------------------gilbert start 2021.0905
+		//-------------------------------------gilbert start 2021.0905
 		public  static ClassData getSinkData(string st)
 		{
 			var val = new ClassData();
@@ -210,16 +217,18 @@ namespace Recycle.ViewModels
 		}
 		//-------------------------------------gilbert end 2021.0905
 		// Classes
-		private ClassData selectedClassA = ClassData.P;
+		private ClassData selectedClassA = getSinkData(ConfigClass.sinkA);
 
-		private ClassData selectedClassB = ClassData.P;
+		private ClassData selectedClassB = getSinkData(ConfigClass.sinkB);
 
-		private ClassData selectedClassC = ClassData.P;
+		private ClassData selectedClassC = getSinkData(ConfigClass.sinkC);
 
-		private ClassData selectedClassD = ClassData.P;
+		private ClassData selectedClassD = getSinkData(ConfigClass.sinkD);//ClassData.P;
+
+		// private static int selectedPercentA = (ConfigClass.sinkValA);
 
 		// TODO: 第1/2頁 global value選單
-		//-------------------------------------------------------------------------------gilbert 2021.08.05
+		//-------------------------------------------------------------------------------gilbert start 2021.09.05
 		public class SinkConfigSetting
 		{
 			public DateTime  _Date { get; set; }
@@ -237,19 +246,28 @@ namespace Recycle.ViewModels
 		
 		public static class ConfigClass
 		{
-			public static string sinkA { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkA_class;//"P";//other
-			public static string sinkB { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkB_class;//"P";//oil
-			public static string sinkC { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkC_class;//"C Sink";//"P";//P
-			public static string sinkD { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkD_class;//"D Sink";//"P";//soy
+            //public static string sinkA { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkA_class;//"P";//other
+            //public static string sinkB { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkB_class;//"P";//oil
+            //public static string sinkC { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkC_class;//"C Sink";//"P";//P
+            //public static string sinkD { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkD_class;//"D Sink";//"P";//soy
+            //public static int sinkValA { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkA_conf;
+            //public static int sinkValB { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkB_conf; 
+            //public static int sinkValC { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkC_conf; 		
+            //public static int sinkValD { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkD_conf;
 
-			public static int sinkValA { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkA_conf;
 
-			public static int sinkValB { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkB_conf; 
-			
-			public static int sinkValC { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkC_conf; 
-			
-			public static int sinkValD { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("C:/Users/e300/PetSinkSetting1.json")).SinkD_conf; 
-			public static double MaxValue_Chart { get; set; } = 15 ;
+            
+
+            public static string sinkA { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("PetSinkSetting1.json")).SinkA_class;//"P";//other
+            public static string sinkB { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("PetSinkSetting1.json")).SinkB_class;//"P";//oil
+            public static string sinkC { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("PetSinkSetting1.json")).SinkC_class;//"C Sink";//"P";//P
+            public static string sinkD { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("PetSinkSetting1.json")).SinkD_class;//"D Sink";//"P";//soy
+            public static int sinkValA { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("PetSinkSetting1.json")).SinkA_conf;
+            public static int sinkValB { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("PetSinkSetting1.json")).SinkB_conf;
+            public static int sinkValC { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("PetSinkSetting1.json")).SinkC_conf;
+            public static int sinkValD { get; set; } = JsonSerializer.Deserialize<SinkConfigSetting>(File.ReadAllText("PetSinkSetting1.json")).SinkD_conf;
+
+            public static double MaxValue_Chart { get; set; } = 15 ;
 			
 			public static RobotLogMongoServices gMongoLogDBmodel { get; set; }
 			
@@ -275,8 +293,9 @@ namespace Recycle.ViewModels
 			try
 			{
 				
-				var tmpBuf = File.ReadAllText("C:/Users/e300/PetSinkSetting1.json");
-				ConfigClass.sinkSaving.SinkA_class = JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkA_class;
+				//var tmpBuf = File.ReadAllText("C:/Users/e300/PetSinkSetting1.json");
+                var tmpBuf = File.ReadAllText("PetSinkSetting1.json");
+                ConfigClass.sinkSaving.SinkA_class = JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkA_class;
 				ConfigClass.sinkSaving.SinkA_conf = JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkA_conf;
 				ConfigClass.sinkSaving.SinkB_class = JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkB_class;
 				ConfigClass.sinkSaving.SinkB_conf = JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkB_conf;
@@ -293,15 +312,17 @@ namespace Recycle.ViewModels
 			catch
 			{
 				// Console.WriteLine("--------------------------------------------Err & Open NewFile----------------------------------------------------------");
-				File.WriteAllText("C:/Users/e300/PetSinkSetting1.json",JsonSerializer.Serialize(ConfigClass.sinkSaving));
-				
-				// Console.WriteLine("--------------------------------------------Read NewFile----------------------------------------------------------");
-				var tmpBuf = File.ReadAllText("C:/Users/e300/PetSinkSetting1.json");
-				// Console.WriteLine(JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkA_conf);
-				// Console.WriteLine(JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkB_conf);
-				// Console.WriteLine(JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkC_conf);
-				// Console.WriteLine(JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkD_conf);
-			}
+				//File.WriteAllText("C:/Users/e300/PetSinkSetting1.json",JsonSerializer.Serialize(ConfigClass.sinkSaving));
+                File.WriteAllText("PetSinkSetting1.json", JsonSerializer.Serialize(ConfigClass.sinkSaving));
+
+                // Console.WriteLine("--------------------------------------------Read NewFile----------------------------------------------------------");
+                //var tmpBuf = File.ReadAllText("C:/Users/e300/PetSinkSetting1.json");
+                var tmpBuf = File.ReadAllText("PetSinkSetting1.json");
+                // Console.WriteLine(JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkA_conf);
+                // Console.WriteLine(JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkB_conf);
+                // Console.WriteLine(JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkC_conf);
+                // Console.WriteLine(JsonSerializer.Deserialize<SinkConfigSetting>(tmpBuf).SinkD_conf);
+            }
 		}
 
 		public static void write_settingconfig(int SinkA_conf,string SinkA_class,int SinkB_conf,string SinkB_class,int SinkC_conf,string SinkC_class,int SinkD_conf,string SinkD_class )
@@ -317,9 +338,10 @@ namespace Recycle.ViewModels
 			sink1.SinkD_class = SinkD_class;
 			sink1.SinkD_conf = SinkD_conf;
 			sink1._Date = DateTime.Now;
-			File.WriteAllText("C:/Users/e300/PetSinkSetting1.json",JsonSerializer.Serialize(sink1));
-		}
-		//-------------------------------------------------------------------------------gilbert 2021.08.
+            //File.WriteAllText("C:/Users/e300/PetSinkSetting1.json",JsonSerializer.Serialize(sink1));
+            File.WriteAllText("PetSinkSetting1.json", JsonSerializer.Serialize(sink1));
+        }
+		//-------------------------------------------------------------------------------gilbert end 2021.09.
 		public ClassData SelectedClassA
 		{
 			get => selectedClassA;
@@ -329,6 +351,13 @@ namespace Recycle.ViewModels
 				{
 					selectedClassA = value;
 					RaisePropertyChanged(nameof(SelectedClassA));
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
+					// TODO: 第2頁 下拉選單
+					ConfigClass.sinkA =value.Type.ToString() ;
+					write_settingconfig(ConfigClass.sinkValA, ConfigClass.sinkA, ConfigClass.sinkValB,
+						ConfigClass.sinkB, ConfigClass.sinkValC, ConfigClass.sinkC, ConfigClass.sinkValD,
+						ConfigClass.sinkD);
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
 				}
 			}
 		}
@@ -342,6 +371,12 @@ namespace Recycle.ViewModels
 				{
 					selectedClassB = value;
 					RaisePropertyChanged(nameof(SelectedClassB));
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
+					// TODO: 第2頁 下拉選單
+					ConfigClass.sinkB = value.Type.ToString() ;
+					write_settingconfig(ConfigClass.sinkValA, ConfigClass.sinkA, ConfigClass.sinkValB,
+						ConfigClass.sinkB, ConfigClass.sinkValC, ConfigClass.sinkC, ConfigClass.sinkValD,
+						ConfigClass.sinkD);
 				}
 			}
 		}
@@ -355,6 +390,13 @@ namespace Recycle.ViewModels
 				{
 					selectedClassC = value;
 					RaisePropertyChanged(nameof(SelectedClassC));
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
+					// TODO: 第2頁 下拉選單
+					ConfigClass.sinkC = value.Type.ToString() ;
+					write_settingconfig(ConfigClass.sinkValA, ConfigClass.sinkA, ConfigClass.sinkValB,
+						ConfigClass.sinkB, ConfigClass.sinkValC, ConfigClass.sinkC, ConfigClass.sinkValD,
+						ConfigClass.sinkD);
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
 				}
 			}
 		}
@@ -368,56 +410,102 @@ namespace Recycle.ViewModels
 				{
 					selectedClassD = value;
 					RaisePropertyChanged(nameof(SelectedClassD));
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
+					// TODO: 第2頁 下拉選單
+					ConfigClass.sinkD = value.Type.ToString() ;
+					write_settingconfig(ConfigClass.sinkValA, ConfigClass.sinkA, ConfigClass.sinkValB,
+						ConfigClass.sinkB, ConfigClass.sinkValC, ConfigClass.sinkC, ConfigClass.sinkValD,
+						ConfigClass.sinkD);
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
 				}
 			}
 		}
 
-		private int selectedPercentA = 99;
+		private int selectedPercentA = ConfigClass.sinkValA;
 
-		private int selectedPercentB = 99;
+		private int selectedPercentB = ConfigClass.sinkValB;
 
-		private int selectedPercentC = 99;
+		private int selectedPercentC = ConfigClass.sinkValC;
 
-		private int selectedPercentD = 99;
+		private int selectedPercentD = ConfigClass.sinkValD;
 
 		public int SelectedPercentA
 		{
-			get => selectedPercentA;
-			set
+			get => selectedPercentA;//ConfigClass.sinkValA ;
+			set  
 			{
-				selectedPercentA = value;
-				RaisePropertyChanged(nameof(selectedPercentA));
-			}
+			
+					selectedPercentA = value;
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
+					// TODO: 第2頁 下拉選單
+					
+					RaisePropertyChanged(nameof(selectedPercentA));
+					ConfigClass.sinkValA = selectedPercentA ;
+					write_settingconfig(ConfigClass.sinkValA, ConfigClass.sinkA, ConfigClass.sinkValB,
+						ConfigClass.sinkB, ConfigClass.sinkValC, ConfigClass.sinkC, ConfigClass.sinkValD,
+						ConfigClass.sinkD);
+
+					//-------------------------------------------------------------------------------gilbert 2021.08.05
+			} 
+			// => selectedPercentA = value;
 		}
 
 		public int SelectedPercentB
 		{
-			get => selectedPercentB;
-			set
+			get => selectedPercentB;//ConfigClass.sinkValB;
+			set  
 			{
+			
 				selectedPercentB = value;
+				//-------------------------------------------------------------------------------gilbert 2021.08.05
+				// TODO: 第2頁 下拉選單
+					
 				RaisePropertyChanged(nameof(selectedPercentB));
-			}
+				ConfigClass.sinkValB = selectedPercentB ;
+				write_settingconfig(ConfigClass.sinkValA, ConfigClass.sinkA, ConfigClass.sinkValB,
+					ConfigClass.sinkB, ConfigClass.sinkValC, ConfigClass.sinkC, ConfigClass.sinkValD,
+					ConfigClass.sinkD);
+				//-------------------------------------------------------------------------------gilbert 2021.08.05
+			} 
+			// set => selectedPercentB = value;
 		}
 
 		public int SelectedPercentC
 		{
-			get => selectedPercentC;
-			set
+			get => selectedPercentC;//ConfigClass.sinkValC;
+			
+			//-------------------------------------------------------------------------------gilbert 2021.08.05
+			set  
 			{
 				selectedPercentC = value;
+				// TODO: 第2頁 下拉選單
 				RaisePropertyChanged(nameof(selectedPercentC));
-			}
+				ConfigClass.sinkValC = selectedPercentC ;
+				write_settingconfig(ConfigClass.sinkValA, ConfigClass.sinkA, ConfigClass.sinkValB,
+					ConfigClass.sinkB, ConfigClass.sinkValC, ConfigClass.sinkC, ConfigClass.sinkValD,
+					ConfigClass.sinkD);
+			} 
+			//-------------------------------------------------------------------------------gilbert 2021.08.05
+			// set => selectedPercentC = value;
 		}
 
 		public int SelectedPercentD
 		{
-			get => selectedPercentD;
-			set
+			get => selectedPercentD;//ConfigClass.sinkValD;
+			
+			//-------------------------------------------------------------------------------gilbert 2021.08.05
+			set  
 			{
 				selectedPercentD = value;
+				// TODO: 第2頁 下拉選單
 				RaisePropertyChanged(nameof(selectedPercentD));
-			}
+				ConfigClass.sinkValD = selectedPercentD ;
+				write_settingconfig(ConfigClass.sinkValA, ConfigClass.sinkA, ConfigClass.sinkValB,
+					ConfigClass.sinkB, ConfigClass.sinkValC, ConfigClass.sinkC, ConfigClass.sinkValD,
+					ConfigClass.sinkD);
+			} 
+			//-------------------------------------------------------------------------------gilbert 2021.08.05
+			// set => selectedPercentC = value;
 		}
 
 		public ClassData[] ClassDatas { get; private set; } = new[]
@@ -463,5 +551,35 @@ namespace Recycle.ViewModels
 			RaisePropertyChanged("CurrentContent");
 		}
 
+
+		public void setConfidence()
+        {
+
+        }
+
+
+		public delegate void DelegateClick(object sender, RoutedEventArgs e);
+
+        public DelegateClick delegateClickHome;
+        public DelegateClick delegateClickDemo;        
+        public DelegateClick delegateClickCircle2D;
+        public DelegateClick delegateClickArc;
+        public DelegateClick delegateClickRect;
+        public DelegateClick delegateClickMoveU;
+
+        public DelegateClick delegateClickXp;
+        public DelegateClick delegateClickXn;
+        public DelegateClick delegateClickYp;
+        public DelegateClick delegateClickYn;
+        public DelegateClick delegateClickZp;
+        public DelegateClick delegateClickZn;
+
+        public DelegateClick delegateClickCameraPauseResume;
+		public DelegateClick delegateClickAbort;
+		public DelegateClick delegateClickServoOn;
+		public DelegateClick delegateClickServoOff;
+		public DelegateClick delegateClickCleanError;
+
+		public DelegateClick delegateClickApplyConfidence;
 	}
 }

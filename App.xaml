@@ -10,20 +10,20 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- language must be first -->
-                <ResourceDictionary Source="/Languages/zh-TW.xaml"/>
-                <ResourceDictionary Source="/Resources/Geometries.xaml"/>
-                <ResourceDictionary Source="/Styles/Fonts.xaml"/>
-                <ResourceDictionary Source="/Styles/Theme.xaml"/>
-                <ResourceDictionary Source="/Styles/Chart.xaml"/>
-                <ResourceDictionary Source="/Styles/CustomControl.xaml"/>
-                <ResourceDictionary Source="/Styles/ComboBox.xaml"/>
-                <ResourceDictionary Source="/Styles/Buttons.xaml"/>
-                <ResourceDictionary Source="/Styles/Border.xaml"/>
-                <ResourceDictionary Source="/Styles/Menu.xaml"/>
-                <ResourceDictionary Source="/Styles/Pages.xaml"/>
-                <ResourceDictionary Source="/Styles/ScrollViewer.xaml"/>
-                <ResourceDictionary Source="/Styles/TabControl.xaml"/>
-                <ResourceDictionary Source="/Styles/Text.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Languages/zh-TW.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Resources/Geometries.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/Fonts.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/Theme.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/Chart.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/CustomControl.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/ComboBox.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/Border.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/Menu.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/Pages.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/ScrollViewer.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/TabControl.xaml"/>
+                <ResourceDictionary Source="/Recycle;component/Styles/Text.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <sys:Boolean x:Key="boolIconOnly">False</sys:Boolean>
             <sys:Boolean x:Key="boolUseOsk">False</sys:Boolean>

@@ -13,14 +13,13 @@
         DataContext="{StaticResource mainViewModel}"
         Title="Recycle"
         FontFamily="{StaticResource Roboto}"
-        WindowState="Maximized"
         MinHeight="600"
         MinWidth="800"
         Height="1024"
         Width="1280"
         SizeChanged="Window_SizeChanged"
         Loaded="Window_Loaded" 
-        Icon="Images/Desk Logo.ico">
+        Icon="Images/Desk Logo.ico" WindowState="Maximized">
     <Window.Resources>
         <cov:CountConverter x:Key="covCountInverse" Inverse="True" />
         <Storyboard x:Key="storyShowPopup">
@@ -58,6 +57,10 @@
         </DataTemplate>
     </Window.Resources>
     <Grid Background="{StaticResource brushGray}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition/>
@@ -65,7 +68,7 @@
         <!-- Header -->
         <DockPanel Panel.ZIndex="3"
                    Background="{StaticResource brushPrimary}"
-                   LastChildFill="False">
+                   LastChildFill="False" Grid.ColumnSpan="2">
             <DockPanel.Resources>
                 <Style TargetType="Line">
                     <Setter Property="Width" Value="1"/>
@@ -131,7 +134,7 @@
             </Button>
             <Line DockPanel.Dock="Right"/>
         </DockPanel>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
@@ -234,7 +237,7 @@
                         Grid.Row="1"
                         IsHitTestVisible="False"
                         Panel.ZIndex="10"
-                        Opacity="0">
+                        Opacity="0" Grid.ColumnSpan="2">
             <ContentControl.Template>
                 <ControlTemplate TargetType="ContentControl">
                     <Grid>

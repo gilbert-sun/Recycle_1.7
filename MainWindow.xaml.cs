@@ -34,7 +34,7 @@ namespace Recycle
 
 		public MainViewModel MainViewModel => DataContext as MainViewModel;
 
-		private bool fullScreen;
+		private bool fullScreen=false;
 
 		public bool FullScreen
 		{
@@ -59,19 +59,28 @@ namespace Recycle
 			}
 		}
 
-		public event EventHandler CanExecuteChanged;
+		public event EventHandler CanExecuteChanged;		
 
 		public MainWindow()
 		{
 			InitializeComponent();
-		}
+        }
 
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			MainViewModel.SelectPage(PageIndex.HOME);
-		}
 
-		private void NaviButton_Checked(object sender, RoutedEventArgs e)
+
+            //// auto full screen
+            //WindowStyle = WindowStyle.None;
+            //WindowState = WindowState.Normal;
+            //WindowState = WindowState.Maximized;
+            //Topmost = true;
+            //iconFullScreen.Data = App.Current.Resources["geoUnfullScreen"] as Geometry;
+            //fullScreen = true;
+        }
+
+        private void NaviButton_Checked(object sender, RoutedEventArgs e)
 		{
 			if (Enum.TryParse((sender as FrameworkElement)?.Tag as string, out PageIndex value))
 			{

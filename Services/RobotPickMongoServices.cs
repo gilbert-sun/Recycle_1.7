@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Channels;
 using MongoDB.Bson;
 using Recycle.Models;
 using Recycle.ViewModels;
+using System.Diagnostics;
 
 namespace Recycle.Services
 {
@@ -61,6 +62,7 @@ namespace Recycle.Services
         //Api1 : write db for Delta-Robot get what kind of pet bottle now
         public MongoPickDBmodel Dumpdata(string btName, string btType,  int conf,string sink,string robotID)
         {
+            //Debug.WriteLine($"Write One Data to DB @{DateTime.Now.ToLocalTime()}");
             MongoPickDBmodel mongodbmodel = new MongoPickDBmodel
             {
                 RobotID = robotID,
@@ -83,7 +85,7 @@ namespace Recycle.Services
         //R:Read I
         public MongoPickDBmodel Get(long timetag)
         {
-            Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetag);
+            //Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetag);
             var model1 = Builders<MongoPickDBmodel>.Filter.Eq("Datetimetag", timetag);
 
             if (model1 == null)
@@ -101,7 +103,7 @@ namespace Recycle.Services
         {
             var timetagNow = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             var timetagToday = ((DateTimeOffset)DateTime.Today).ToUnixTimeMilliseconds();
-            Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetagNow);
+            //Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetagNow);
             // var model1 = Builders<MongoPickDBmodel>.Filter.Eq("Datetimetag", timetag);
 
             var le_Now = Builders<MongoPickDBmodel>.Filter.Lte(x=> x.Datetimetag,timetagNow);
@@ -170,7 +172,7 @@ namespace Recycle.Services
         {
             // var timetagNow = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             var timetagToday = ((DateTimeOffset)DateTime.Today).ToUnixTimeMilliseconds();
-            Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetagNow);
+            //Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetagNow);
             // var model1 = Builders<MongoPickDBmodel>.Filter.Eq("Datetimetag", timetag);
 
             var le_Now = Builders<MongoPickDBmodel>.Filter.Lte(x=> x.Datetimetag,timetagNow);
@@ -214,7 +216,7 @@ namespace Recycle.Services
         
         public long GetDayTime(long timetag)
         {
-            Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetag);
+            //Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetag);
             var model1 = Builders<MongoPickDBmodel>.Filter.Eq("Datetimetag", timetag);
 
             if (model1 == null)
@@ -234,7 +236,7 @@ namespace Recycle.Services
         
         public  decimal GetConfidence(long timetag)
         {
-            Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetag);
+            //Console.WriteLine("\n--------: RobotMongoDbServices.cs --GET--ID==[{0}] !\n ",timetag);
             var model1 = Builders<MongoPickDBmodel>.Filter.Eq("Datetimetag", timetag);
 
             if (model1 == null)

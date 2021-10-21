@@ -127,6 +127,7 @@
                                            Description="{DynamicResource strComPicks}"
                                            Grid.Row="2"
                                            Grid.Column="1"/>
+                            <!-- gilbert start 2021.09.05 -->
                             <ComboBox x:Name="PART_ComboBox1"
                                       Height="56"
                                       Foreground="{TemplateBinding Foreground}"

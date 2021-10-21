@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ctrl="clr-namespace:Recycle.UserControls"
+             xmlns:ctrl="clr-namespace:Recycle.UserControls"   
+             
              mc:Ignorable="d" >
     <UserControl.Resources>
         <Style x:Key="styleWhiteBorderAd" TargetType="Border" BasedOn="{StaticResource styleWhiteBorder}">
@@ -38,7 +39,12 @@
         </Grid.RowDefinitions>
         <StackPanel Margin="40,0" Orientation="Horizontal">
             <TextBlock Style="{StaticResource styleTextHeader}" Text="Robot Name" VerticalAlignment="Center"/>
-            <Button Style="{StaticResource styleWhiteButton}" Content="Home" Height="40" Margin="33,0,0,0"/>
+            <Button Style="{StaticResource styleWhiteButton}" Content="Camera Pause/Resume" Height="40" Margin="33,0,0,0" Padding="10" Click="Button_ClickCameraPauseResume"/>
+            <Button Style="{StaticResource styleWhiteButton}" Content="ServoOn" Height="40" Margin="33,0,0,0" Padding="10" Click="Button_ClickServoOn"/>
+            <Button Style="{StaticResource styleWhiteButton}" Content="ServoOff" Height="40" Margin="33,0,0,0" Padding="10" Click="Button_ClickServoOff"/>
+            <Button Style="{StaticResource styleWhiteButton}" Content="Abort" Height="40" Margin="33,0,0,0" Padding="10" Click="Button_ClickAbort"/>
+            <Button Style="{StaticResource styleWhiteButton}" Content="CleanError" Height="40" Margin="33,0,0,0" Padding="10" Click="Button_ClickCleanError"/>
+            <Button Style="{StaticResource styleWhiteButton}" Content="Home" Height="40" Margin="33,0,0,0" Click="Button_ClickHome"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1">
             <UniformGrid Style="{StaticResource styleUniformGridMain}" Margin="0,12">
@@ -53,7 +59,7 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <!-- Demo -->
-                    <Border Style="{StaticResource styleWhiteBorderAd}" Width="376" Height="208">
+                    <Border Style="{StaticResource styleWhiteBorderAd}" Width="376" Height="208" IsEnabled="True">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
@@ -70,12 +76,12 @@
                                 <RowDefinition Height="40"/>
                             </Grid.RowDefinitions>
                             <TextBlock Text="Demo" Style="{StaticResource styleTextHeader}" Grid.ColumnSpan="5"/>
-                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoCycleMovement}" Grid.Row="2"/>
-                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemo2dCircle}" Grid.Row="2" Grid.Column="2"/>
-                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoArc}" Grid.Row="2" Grid.Column="4"/>
-                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemo2dCircle}" Grid.Row="4"/>
-                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoRectangle}" Grid.Row="4" Grid.Column="2"/>
-                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoUGeo}" Grid.Row="4" Grid.Column="4"/>
+                            <Button Style="{StaticResource styleSettingButton}" Grid.Row="2" Content="{DynamicResource strDemoCycleMovement}" Click="Button_ClickDemo"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemo2dCircle}" Grid.Row="2" Grid.Column="2" Click="Button_ClickCircle2D"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoArc}" Grid.Row="2" Grid.Column="4" Click="Button_ClickArc"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemo2dCircle}" Grid.Row="4" Click="Button_ClickCircle2D"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoRectangle}" Grid.Row="4" Grid.Column="2" Click="Button_ClickRect"/>
+                            <Button Style="{StaticResource styleSettingButton}" Content="{DynamicResource strDemoUGeo}" Grid.Row="4" Grid.Column="4" Click="Button_ClickMoveU"/>
                         </Grid>
                     </Border>
                     <Border Style="{StaticResource styleWhiteBorder}" Width="376" Height="208" Grid.Row="1">
@@ -120,7 +126,7 @@
                             Width="168" 
                             Height="440" 
                             Grid.Column="1" 
-                            Grid.RowSpan="2">
+                            Grid.RowSpan="2" IsEnabled="True">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"/>
@@ -143,10 +149,10 @@
                                            VerticalAlignment="Center"
                                            Text="X"/>
                                 <RepeatButton Style="{StaticResource styleIncreaseButton}"
-                                              VerticalAlignment="Center"/>
+                                              VerticalAlignment="Center" Click="RepeatButtonXp_Click"/>
                                 <RepeatButton Style="{StaticResource styleDecreaseButton}"
                                               HorizontalAlignment="Right"
-                                              VerticalAlignment="Center"/>
+                                              VerticalAlignment="Center" Click="RepeatButtonXn_Click"/>
                             </UniformGrid>
                             <UniformGrid Grid.Row="6" Rows="1">
                                 <TextBlock Style="{StaticResource styleTextHeader}"
@@ -154,10 +160,10 @@
                                            VerticalAlignment="Center"
                                            Text="Y"/>
                                 <RepeatButton Style="{StaticResource styleIncreaseButton}"
-                                              VerticalAlignment="Center"/>
+                                              VerticalAlignment="Center" Click="RepeatButtonYp_Click"/>
                                 <RepeatButton Style="{StaticResource styleDecreaseButton}"
                                               HorizontalAlignment="Right"
-                                              VerticalAlignment="Center"/>
+                                              VerticalAlignment="Center" Click="RepeatButtonYn_Click"/>
                             </UniformGrid>
                             <UniformGrid Grid.Row="8" Rows="1">
                                 <TextBlock Style="{StaticResource styleTextHeader}"
@@ -165,10 +171,10 @@
                                            VerticalAlignment="Center"
                                            Text="Z"/>
                                 <RepeatButton Style="{StaticResource styleIncreaseButton}"
-                                              VerticalAlignment="Center"/>
+                                              VerticalAlignment="Center" Click="RepeatButtonZp_Click"/>
                                 <RepeatButton Style="{StaticResource styleDecreaseButton}"
                                               HorizontalAlignment="Right"
-                                              VerticalAlignment="Center"/>
+                                              VerticalAlignment="Center" Click="RepeatButtonZn_Click"/>
                             </UniformGrid>
                         </Grid>
                     </Border>
@@ -195,22 +201,22 @@
                                        Text="匯入 DH File: Delta_001.xml"/>
                             <TextBox Grid.Row="2"
                                      Style="{StaticResource styleTextBoxAd}"
-                                     Text="{Binding DHe1, Mode=TwoWay}"
+                                     Text="{Binding DHe, Mode=TwoWay}"
                                      ctrl:TextBoxHelper.Watermark="e"/>
                             <TextBox Grid.Row="2"
                                      Grid.Column="2"
                                      Style="{StaticResource styleTextBoxAd}"
-                                     Text="{Binding DHr, Mode=TwoWay}"
-                                     ctrl:TextBoxHelper.Watermark="r"/>
+                                     Text="{Binding DHf, Mode=TwoWay}"
+                                     ctrl:TextBoxHelper.Watermark="f"/>
                             <TextBox Grid.Row="4"
-                                     Style="{StaticResource styleTextBoxAd}"
-                                     Text="{Binding DHe2, Mode=TwoWay}"
-                                     ctrl:TextBoxHelper.Watermark="e"/>
-                            <TextBox Grid.Row="4"
-                                     Grid.Column="2"
                                      Style="{StaticResource styleTextBoxAd}"
                                      Text="{Binding DHre, Mode=TwoWay}"
                                      ctrl:TextBoxHelper.Watermark="re"/>
+                            <TextBox Grid.Row="4"
+                                     Grid.Column="2"
+                                     Style="{StaticResource styleTextBoxAd}"
+                                     Text="{Binding DHrf, Mode=TwoWay}"
+                                     ctrl:TextBoxHelper.Watermark="rf"/>
                         </Grid>
                     </Border>
                 </StackPanel>

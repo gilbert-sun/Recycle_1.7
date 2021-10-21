@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//-------------------------------------------------- gilbert start 2021.09.05
 using Recycle.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,7 +30,7 @@ namespace Recycle.Views
 		public LogPage()
 		{
 			InitializeComponent();
-			//----------------------------------------------
+			//-------------------------------------------------- gilbert start 2021.09.05
 			LogInformation("按下 [總覽]");
 			int count = 0;
 			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog();
@@ -76,7 +77,7 @@ namespace Recycle.Views
 		private void RadioButton_Checked(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [總覽]");
-			//----------------------------------------------
+			//-------------------------------------------------- gilbert start 2021.09.05
 			int count = 0;
 			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog();
 			if (visErrlog != null)
@@ -101,7 +102,7 @@ namespace Recycle.Views
 		private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [機械手臂/手臂機構]");
-			//----------------------------------------------
+			//-------------------------------------------------- gilbert start 2021.09.05
 			int count = 0;
 			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog("RobotArm");
 			if (visErrlog != null)
@@ -125,7 +126,7 @@ namespace Recycle.Views
 		private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [視覺系統]");
-			//----------------------------------------------
+			//----------------------------------------------- gilbert start 2021.09.05
 			int count = 0;
 			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog("VisionSys");
 			if (visErrlog != null)
@@ -150,7 +151,7 @@ namespace Recycle.Views
 		private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [輸送帶]");
-			//----------------------------------------------
+			//-------------------------------------------------- gilbert start 2021.09.05
 			int count = 0;
 			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog("ConveySys");
 			if (visErrlog != null)
@@ -174,7 +175,7 @@ namespace Recycle.Views
 		private void RadioButton_Checked_4(object sender, RoutedEventArgs e)
 		{
 			LogInformation("按下 [控制器]");
-			//----------------------------------------------
+			//-------------------------------------------------- gilbert start 2021.09.05
 			int count = 0;
 			var visErrlog  = MainViewModel.ConfigClass.gMongoLogDBmodel.GetFinalErrLog("ControSys");
 			if (visErrlog != null)

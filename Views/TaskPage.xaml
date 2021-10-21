@@ -10,11 +10,12 @@
             <RowDefinition Height="64"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <!-- Tabs -->
+                    <!-- Tabs -->
         <ListBox Style="{StaticResource styleRobotTab}"
                  ItemsSource="{Binding Robots, Source={StaticResource mainViewModel}}"
                  SelectedItem="{Binding SelectedRobot, Source={StaticResource mainViewModel}, Mode=TwoWay}"
                  Margin="40,0,0,0"/>
+
         <!-- Content -->
         <ScrollViewer x:Name="scrollViewer" Grid.Row="1" Margin="0,12,0,0">
             <Grid x:Name="robot"
@@ -30,13 +31,14 @@
                     <RowDefinition/>
                     <RowDefinition Height="88"/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Style="{StaticResource styleTaskBorder}" >
                     <ctrl:TaskCard DataContext="{Binding SinkA}"
                                    Accumulation="{Binding Accumulation, Mode=OneWay}"
                                    Header="{Binding Label, Mode=OneWay}"
                                    Status="{Binding Status, Mode=OneWay}"
-                                   Percent="{Binding SelectedPercentA, Source={StaticResource mainViewModel}}"
+                                   Percent="{Binding SelectedPercentA, Source={StaticResource mainViewModel}, Mode=TwoWay}"
                                    PercentItems="{Binding ClassPercents, Source={StaticResource mainViewModel}}"
                                    Icon="{StaticResource geoSinkA}"
                                    ClassItems="{Binding ClassDatas, Source={StaticResource mainViewModel}}"
@@ -47,7 +49,7 @@
                                    Accumulation="{Binding Accumulation, Mode=OneWay}"
                                    Header="{Binding Label, Mode=OneWay}"
                                    Status="{Binding Status, Mode=OneWay}"
-                                   Percent="{Binding SelectedPercentB, Source={StaticResource mainViewModel}}"
+                                   Percent="{Binding SelectedPercentB, Source={StaticResource mainViewModel}, Mode=TwoWay}"
                                    PercentItems="{Binding ClassPercents, Source={StaticResource mainViewModel}}"
                                    ClassItems="{Binding ClassDatas, Source={StaticResource mainViewModel}}"
                                    Icon="{StaticResource geoSinkB}"
@@ -58,7 +60,7 @@
                                    Accumulation="{Binding Accumulation, Mode=OneWay}"
                                    Header="{Binding Label, Mode=OneWay}"
                                    Status="{Binding Status, Mode=OneWay}"
-                                   Percent="{Binding SelectedPercentC, Source={StaticResource mainViewModel}}"
+                                   Percent="{Binding SelectedPercentC, Source={StaticResource mainViewModel}, Mode=TwoWay}"
                                    PercentItems="{Binding ClassPercents, Source={StaticResource mainViewModel}}"
                                    Icon="{StaticResource geoSinkC}"
                                    ClassItems="{Binding ClassDatas, Source={StaticResource mainViewModel}}"
@@ -69,7 +71,7 @@
                                    Accumulation="{Binding Accumulation, Mode=OneWay}"
                                    Header="{Binding Label, Mode=OneWay}"
                                    Status="{Binding Status, Mode=OneWay}"
-                                   Percent="{Binding SelectedPercentD, Source={StaticResource mainViewModel}}"
+                                   Percent="{Binding SelectedPercentD, Source={StaticResource mainViewModel}, Mode=TwoWay}"
                                    PercentItems="{Binding ClassPercents, Source={StaticResource mainViewModel}}"
                                    Icon="{StaticResource geoSinkD}"
                                    ClassItems="{Binding ClassDatas, Source={StaticResource mainViewModel}}"
@@ -101,6 +103,8 @@
                         <Path />
                     </UniformGrid>
                 </Border>
+
+                <Button Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource styleWhiteButton}" Margin="12" Content="Apply" Height="40" Click="ButtonApply_Click"/>
             </Grid>
         </ScrollViewer>
     </Grid>

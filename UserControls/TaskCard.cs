@@ -26,9 +26,8 @@ namespace Recycle.UserControls
 		public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
 			name: "SelectedItem",
 			propertyType: typeof(ClassData),
-			ownerType: typeof(TaskCard));//,
-			// typeMetadata: new PropertyMetadata(OnSelectedItemChanged));
-		
+			ownerType: typeof(TaskCard));
+
 		public static readonly DependencyProperty AccumulationProperty = DependencyProperty.Register(
 			name: "Accumulation",
 			propertyType: typeof(string),
@@ -43,19 +42,19 @@ namespace Recycle.UserControls
 			name: "Percent",
 			propertyType: typeof(int),
 			ownerType: typeof(TaskCard),//);
+			//-------------------------------------------------- gilbert start 2021.09.05
 			typeMetadata: new PropertyMetadata(OnSelectedItemChanged));
 
 		public static readonly DependencyProperty PercentItemsProperty = DependencyProperty.Register(
 			name: "PercentItems",
 			propertyType: typeof(IEnumerable<int>),
 			ownerType: typeof(TaskCard));
-			// typeMetadata: new PropertyMetadata(OnSelectedItemChanged));
 
 		public static readonly DependencyProperty StatusProperty = DependencyProperty.Register(
 			 name: "Status",
 			 propertyType: typeof(ComponentStatus),
 			 ownerType: typeof(TaskCard));
-//-------------------------------------------------
+//-------------------------------------------------- gilbert start 2021.09.05
 		 private static void OnSelectedItemChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
 		 {
 		 	(sender as TaskCard)?.UpdateSelected();
@@ -109,7 +108,7 @@ namespace Recycle.UserControls
 			set => SetValue(StatusProperty, value);
 		}
 
-//--------------------------------------------------
+//-------------------------------------------------- gilbert start 2021.09.05
 		 public override void OnApplyTemplate()
 		 {
 		 	base.OnApplyTemplate();
@@ -152,6 +151,6 @@ namespace Recycle.UserControls
 		    
 		    comboBox1.SelectedItem = Percent;
 		 }
-//--------------------------------------------------
+//-------------------------------------------------- gilbert end 2021.09.05
 	}
 }

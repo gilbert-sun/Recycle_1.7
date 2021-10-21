@@ -10,15 +10,6 @@ namespace Recycle.ViewModels
 	{
 		public static void SetParameter(this SinkViewModel sink, int acc, ComponentStatus status)
 		{
-
-		// public static void SetParameter(this SinkViewModel sink, int acc, double percent, ComponentStatus status , string label=null)
-		// {
-		// 	if (label != null) 
-		// 	{
-		// 		sink.Label = label;
-		// 		sink.RaisePropertyChanged(nameof(SinkViewModel.Label));
-		// 		
-		// 	}
 			sink.Accumulation = acc;
 			sink.Status = status;
 			sink.RaisePropertyChanged(nameof(SinkViewModel.Accumulation));
@@ -75,7 +66,6 @@ namespace Recycle.ViewModels
 			robot.Status = status;
 			robot.RaisePropertyChanged(nameof(RobotParameter.Status));
 			robot.RaisePropertyChanged(nameof(RobotParameter.Title));
-			// robot.RaisePropertyChanged(nameof(RobotParameter.Value));
 		}
 
 		public static RobotParameter Parameter(this RobotViewModel robot, string key)

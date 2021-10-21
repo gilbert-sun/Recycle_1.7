@@ -19,7 +19,7 @@ namespace Recycle
 	{
 		public const string LANGUAGE_ZH_TW = "zh-TW";
 
-		public const string LANGUAGE_EN_US = "en-US";
+		public const string LANGUAGE_EN_US = "en-US";		
 
 		public static bool ChangeCulture(string langName)
 		{
@@ -32,7 +32,7 @@ namespace Recycle
 			{
 				throw new Exception("Not support language.");
 			}
-			var uri = new Uri($"Languages\\{langName}.xaml", UriKind.Relative);
+			var uri = new Uri($"/Recycle;component/Languages/{langName}.xaml", UriKind.Relative);
 			var dictionary = LoadComponent(uri) as ResourceDictionary;
 			Current.Resources.MergedDictionaries[0] = dictionary;
 			CultureInfo.DefaultThreadCurrentCulture = new CultureInfo(langName);
@@ -46,8 +46,9 @@ namespace Recycle
 			{
 				Current.Resources["boolUseOsk"] = true;
 			}
-			var viewModel = Current.Resources["mainViewModel"] as MainViewModel;
+			var viewModel = Current.Resources["mainViewModel"] as MainViewModel;			
 			viewModel.ChangeLanguage(LANGUAGE_ZH_TW);
 		}
 	}
 }
+

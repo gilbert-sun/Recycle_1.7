@@ -1,151 +1,149 @@
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\bin\Debug\Recycle.exe.config
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\bin\Debug\Recycle.exe
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\bin\Debug\Recycle.pdb
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Languages\zh-TW.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\Buttons.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\Fonts.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\Menu.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\TabControl.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\Theme.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\MainWindow.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\App.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle_MarkupCompile.cache
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle_MarkupCompile.lref
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\App.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\MainWindow.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle.g.resources
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle.Properties.Resources.resources
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle.csproj.GenerateResource.cache
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle.csproj.CoreCompileInputs.cache
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle.exe
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle.pdb
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\Pages.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\HomePage.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\HomePage.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\OverallView.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\OverallView.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\RobotDetail.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\RobotDetail.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Resources\Geometries.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\Text.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\TaskPage.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\TaskPage.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\ComboBox.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\CustomControl.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\ScrollViewer.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\Chart.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Styles\Border.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\RobotHistogram.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\RobotHistogram.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\RobotPicks.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\RobotPicks.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\StatusPage.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\StatusPage.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\AdjustPage.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\AdjustPage.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\LogPage.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\LogPage.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\LoginView.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\LoginView.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Languages\en-US.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\GeometriesDemo.g.cs
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Views\GeometriesDemo.baml
-C:\Users\廖恆毅\source\repos\Recycle\Recycle\obj\Debug\Recycle.csproj.AssemblyReference.cache
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\snappy32.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\snappy64.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\libzstd.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\mongocrypt.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\Recycle.exe.config
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\Recycle.exe
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\Recycle.pdb
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\DnsClient.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\MongoDB.Bson.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\MongoDB.Driver.Core.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\MongoDB.Driver.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\MongoDB.Libmongocrypt.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\Newtonsoft.Json.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\SharpCompress.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Buffers.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Memory.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Net.Http.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Text.Json.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.ValueTuple.dll
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\DnsClient.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\MongoDB.Bson.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\MongoDB.Driver.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\MongoDB.Driver.Core.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\Newtonsoft.Json.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Buffers.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Memory.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Text.Json.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\e300\source\repos\Recycle_1.7\bin\Debug\System.ValueTuple.xml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.csprojAssemblyReference.cache
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.exe.config
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Languages\en-US.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Languages\zh-TW.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Resources\Geometries.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\Border.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\ComboBox.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\Fonts.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\Menu.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\Pages.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\ScrollViewer.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\TabControl.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\Theme.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\MainWindow.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\AdjustPage.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\GeometriesDemo.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\HomePage.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\LoginView.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\LogPage.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\OverallView.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\RobotDetail.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\RobotHistogram.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\RobotPicks.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\StatusPage.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\TaskPage.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\App.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle_Content.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle_MarkupCompile.cache
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle_MarkupCompile.lref
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\App.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\MainWindow.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\Buttons.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\Chart.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\CustomControl.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Styles\Text.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\AdjustPage.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\GeometriesDemo.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\HomePage.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\LoginView.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\LogPage.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\OverallView.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\RobotDetail.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\RobotHistogram.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\RobotPicks.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\StatusPage.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Views\TaskPage.baml
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.g.resources
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.Properties.Resources.resources
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.csproj.GenerateResource.cache
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.csproj.CoreCompileInputs.cache
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.csproj.CopyComplete
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.exe
-C:\Users\e300\source\repos\Recycle_1.7\obj\Debug\Recycle.pdb
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\bin\Debug\Recycle.exe.config
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\bin\Debug\Recycle.exe
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\bin\Debug\Recycle.pdb
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Languages\en-US.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Languages\zh-TW.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Resources\Geometries.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\Border.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\ComboBox.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\Fonts.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\Menu.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\Pages.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\ScrollViewer.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\TabControl.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\Theme.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\MainWindow.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\AdjustPage.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\GeometriesDemo.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\HomePage.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\LoginView.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\LogPage.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\OverallView.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\RobotDetail.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\RobotHistogram.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\RobotPicks.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\StatusPage.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\TaskPage.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\App.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Recycle_MarkupCompile.cache
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Recycle_MarkupCompile.lref
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\App.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\MainWindow.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\Buttons.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\Chart.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\CustomControl.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Styles\Text.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\AdjustPage.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\GeometriesDemo.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\HomePage.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\LoginView.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\LogPage.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\OverallView.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\RobotDetail.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\RobotHistogram.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\RobotPicks.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\StatusPage.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Views\TaskPage.baml
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Recycle.g.resources
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Recycle.Properties.Resources.resources
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Recycle.csproj.GenerateResource.cache
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Recycle.csproj.CoreCompileInputs.cache
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Recycle.exe
+G:\ITRI_Projects\2020.02 資源回收分類機器人 李峰吉\專案原始碼\Source\Recycle\obj\Debug\Recycle.pdb
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle.csprojAssemblyReference.cache
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Languages\en-US.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Languages\zh-TW.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Resources\Geometries.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\Border.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\ComboBox.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\Fonts.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\Menu.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\Pages.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\ScrollViewer.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\TabControl.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\Theme.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\MainWindow.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\AdjustPage.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\GeometriesDemo.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\HomePage.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\LoginView.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\LogPage.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\OverallView.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\RobotDetail.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\RobotHistogram.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\RobotPicks.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\StatusPage.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\TaskPage.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\App.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle_MarkupCompile.cache
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle_MarkupCompile.lref
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle.exe
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle.pdb
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle_Content.g.cs
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\snappy32.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\snappy64.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\libzstd.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\mongocrypt.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\Recycle.exe.config
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\Recycle.exe
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\Recycle.pdb
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\DnsClient.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\MongoDB.Bson.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\MongoDB.Driver.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\Newtonsoft.Json.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\SharpCompress.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Buffers.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Memory.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Net.Http.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Text.Json.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.ValueTuple.dll
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\DnsClient.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\MongoDB.Bson.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\MongoDB.Driver.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\Newtonsoft.Json.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Buffers.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Memory.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Text.Json.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\bin\Debug\System.ValueTuple.xml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\App.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\MainWindow.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\Buttons.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\Chart.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\CustomControl.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Styles\Text.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\AdjustPage.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\GeometriesDemo.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\HomePage.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\LoginView.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\LogPage.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\OverallView.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\RobotDetail.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\RobotHistogram.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\RobotPicks.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\StatusPage.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Views\TaskPage.baml
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle.g.resources
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle.Properties.Resources.resources
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle.csproj.GenerateResource.cache
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle.csproj.CoreCompileInputs.cache
+C:\Users\epcio\Documents\DeltaNew\Delta\Recycle\obj\Debug\Recycle.csproj.CopyComplete

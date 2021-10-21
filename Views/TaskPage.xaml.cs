@@ -16,19 +16,27 @@ using System.Windows.Shapes;
 
 namespace Recycle.Views
 {
-	/// <summary>
-	/// TaskPage.xaml 的互動邏輯
-	/// </summary>
-	public partial class TaskPage : UserControl
-	{
-		public TaskPage()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// TaskPage.xaml 的互動邏輯
+    /// </summary>
+    public partial class TaskPage : UserControl
+    {
+        public static MainViewModel Instance => App.Current.Resources["mainViewModel"] as MainViewModel;
 
-		private void robot_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-		{
-			scrollViewer.ScrollToTop();
-		}
-	}
+        public TaskPage()
+        {
+            InitializeComponent();
+        }
+
+        private void robot_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            scrollViewer.ScrollToTop();
+        }
+
+        private void ButtonApply_Click(object sender, RoutedEventArgs e)
+        {
+            Instance.delegateClickApplyConfidence(sender, e);
+        }
+
+    }
 }
